@@ -16,14 +16,14 @@ public class ModBlocks {
 	@GameRegistry.ObjectHolder("snowvariants:stairs_brick_snow")
 	public static BlockStairBase stairsBrickSnow = new BlockStairBase(Blocks.BRICK_BLOCK, "stairs_brick_snow", SoundType.STONE);
 
-	@GameRegistry.ObjectHolder("snowvariants:stairs_stonebrick_snow")
-	public static BlockStairBase stairsStonebrickSnow = new BlockStairBase(Blocks.STONEBRICK, "stairs_stonebrick_snow", SoundType.STONE);
+	@GameRegistry.ObjectHolder("snowvariants:stairs_stone_brick_snow")
+	public static BlockStairBase stairsStoneBrickSnow = new BlockStairBase(Blocks.STONEBRICK, "stairs_stone_brick_snow", SoundType.STONE);
 
-	@GameRegistry.ObjectHolder("snowvariants:stairs_netherbrick_snow")
-	public static BlockStairBase stairsNetherbrickSnow = new BlockStairBase(Blocks.NETHER_BRICK, "stairs_netherbrick_snow", SoundType.STONE);
+	@GameRegistry.ObjectHolder("snowvariants:stairs_nether_brick_snow")
+	public static BlockStairBase stairsNetherBrickSnow = new BlockStairBase(Blocks.NETHER_BRICK, "stairs_nether_brick_snow", SoundType.STONE);
 
 	@GameRegistry.ObjectHolder("snowvariants:stairs_sandstone_snow")
-	public static BlockStairBase stairsSandstoneSnow = new BlockStairBase(Blocks.STONEBRICK, "stairs_sandstone_snow", SoundType.STONE);
+	public static BlockStairBase stairsSandstoneSnow = new BlockStairBase(Blocks.SANDSTONE, "stairs_sandstone_snow", SoundType.STONE);
 
 	@GameRegistry.ObjectHolder("snowvariants:stairs_spruce_snow")
 	public static BlockStairBase stairsSpruceSnow = new BlockStairBase(Blocks.PLANKS, "stairs_spruce_snow", SoundType.WOOD);
@@ -40,8 +40,8 @@ public class ModBlocks {
 	@GameRegistry.ObjectHolder("snowvariants:stairs_acacia_snow")
 	public static BlockStairBase stairsAcaciaSnow = new BlockStairBase(Blocks.PLANKS, "stairs_acacia_snow", SoundType.WOOD);
 
-	@GameRegistry.ObjectHolder("snowvariants:stairs_darkoak_snow")
-	public static BlockStairBase stairsDarkOakSnow = new BlockStairBase(Blocks.PLANKS, "stairs_darkoak_snow", SoundType.WOOD);
+	@GameRegistry.ObjectHolder("snowvariants:stairs_dark_oak_snow")
+	public static BlockStairBase stairsDarkOakSnow = new BlockStairBase(Blocks.PLANKS, "stairs_dark_oak_snow", SoundType.WOOD);
 
 	@GameRegistry.ObjectHolder("snowvariants:stairs_red_sandstone_snow")
 	public static BlockStairBase stairsRedSandstoneSnow = new BlockStairBase(Blocks.RED_SANDSTONE, "stairs_red_sandstone_snow", SoundType.STONE);

@@ -29,5 +29,18 @@ public class CommonProxy {
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
 		event.getRegistry().register(ModBlocks.stairsOakSnow);
+		event.getRegistry().register(ModBlocks.stairsCobblestoneSnow);
+		event.getRegistry().register(ModBlocks.stairsBrickSnow);
+		event.getRegistry().register(ModBlocks.stairsStoneBrickSnow);
+		event.getRegistry().register(ModBlocks.stairsNetherBrickSnow);
+		event.getRegistry().register(ModBlocks.stairsSandstoneSnow);
+		event.getRegistry().register(ModBlocks.stairsSpruceSnow);
+		event.getRegistry().register(ModBlocks.stairsBirchSnow);
+		event.getRegistry().register(ModBlocks.stairsJungleSnow);
+		event.getRegistry().register(ModBlocks.stairsQuartzSnow);
+		event.getRegistry().register(ModBlocks.stairsAcaciaSnow);
+		event.getRegistry().register(ModBlocks.stairsDarkOakSnow);
+		event.getRegistry().register(ModBlocks.stairsRedSandstoneSnow);
+		event.getRegistry().register(ModBlocks.stairsPurpurSnow);
 	}
 }

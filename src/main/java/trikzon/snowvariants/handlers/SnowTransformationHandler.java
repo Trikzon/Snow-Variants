@@ -46,6 +46,97 @@ public class SnowTransformationHandler {
 						if (!playerIn.isCreative())
 							item.shrink(1);
 					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.STONE_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsCobblestoneSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.BRICK_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsBrickSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.STONE_BRICK_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsStoneBrickSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.NETHER_BRICK_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsNetherBrickSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.SANDSTONE_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsSandstoneSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.SPRUCE_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsSpruceSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.BIRCH_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsBirchSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.JUNGLE_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsJungleSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.QUARTZ_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsQuartzSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.ACACIA_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsAcaciaSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.DARK_OAK_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsDarkOakSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.RED_SANDSTONE_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsCobblestoneSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.PURPUR_STAIRS.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.stairsPurpurSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
+						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
 				}
 			}
 		}
