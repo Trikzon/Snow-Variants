@@ -3,7 +3,7 @@
     "modid": "snowvariants",
     "name": "Snow Variants",
     "description": "Submission for 2018 MMD Winter Jam",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "mcversion": "${mcversion}",
     "url": "",
     "updateUrl": "",
