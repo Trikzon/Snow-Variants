@@ -73,22 +73,22 @@ public class ModBlocks {
 	public static BlockSnowySlab slabQuartzSnow = new BlockSnowySlab("slab_quartz_snow", SoundType.STONE, Blocks.QUARTZ_BLOCK.getDefaultState().getMaterial());
 
 	@GameRegistry.ObjectHolder("snowvariants:slab_oak_snow")
-	public static BlockSnowySlab slabOakSnow = new BlockSnowySlab("slab_oak_snow", SoundType.STONE, Blocks.PLANKS.getDefaultState().getMaterial());
+	public static BlockSnowySlab slabOakSnow = new BlockSnowySlab("slab_oak_snow", SoundType.WOOD, Blocks.PLANKS.getDefaultState().getMaterial());
 
 	@GameRegistry.ObjectHolder("snowvariants:slab_spruce_snow")
-	public static BlockSnowySlab slabSpruceSnow = new BlockSnowySlab("slab_spruce_snow", SoundType.STONE, Blocks.PLANKS.getDefaultState().getMaterial());
+	public static BlockSnowySlab slabSpruceSnow = new BlockSnowySlab("slab_spruce_snow", SoundType.WOOD, Blocks.PLANKS.getDefaultState().getMaterial());
 
 	@GameRegistry.ObjectHolder("snowvariants:slab_birch_snow")
-	public static BlockSnowySlab slabBirchSnow = new BlockSnowySlab("slab_birch_snow", SoundType.STONE, Blocks.PLANKS.getDefaultState().getMaterial());
+	public static BlockSnowySlab slabBirchSnow = new BlockSnowySlab("slab_birch_snow", SoundType.WOOD, Blocks.PLANKS.getDefaultState().getMaterial());
 
 	@GameRegistry.ObjectHolder("snowvariants:slab_jungle_snow")
-	public static BlockSnowySlab slabJungleSnow = new BlockSnowySlab("slab_jungle_snow", SoundType.STONE, Blocks.PLANKS.getDefaultState().getMaterial());
+	public static BlockSnowySlab slabJungleSnow = new BlockSnowySlab("slab_jungle_snow", SoundType.WOOD, Blocks.PLANKS.getDefaultState().getMaterial());
 
 	@GameRegistry.ObjectHolder("snowvariants:slab_acacia_snow")
-	public static BlockSnowySlab slabAcaciaSnow = new BlockSnowySlab("slab_acacia_snow", SoundType.STONE, Blocks.PLANKS.getDefaultState().getMaterial());
+	public static BlockSnowySlab slabAcaciaSnow = new BlockSnowySlab("slab_acacia_snow", SoundType.WOOD, Blocks.PLANKS.getDefaultState().getMaterial());
 
 	@GameRegistry.ObjectHolder("snowvariants:slab_dark_oak_snow")
-	public static BlockSnowySlab slabDarkOakSnow = new BlockSnowySlab("slab_dark_oak_snow", SoundType.STONE, Blocks.PLANKS.getDefaultState().getMaterial());
+	public static BlockSnowySlab slabDarkOakSnow = new BlockSnowySlab("slab_dark_oak_snow", SoundType.WOOD, Blocks.PLANKS.getDefaultState().getMaterial());
 
 	@GameRegistry.ObjectHolder("snowvariants:slab_red_sandstone_snow")
 	public static BlockSnowySlab slabRedSandstoneSnow = new BlockSnowySlab("slab_red_sandstone_snow", SoundType.STONE, Blocks.RED_SANDSTONE.getDefaultState().getMaterial());

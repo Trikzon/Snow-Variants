@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "normal": { "model": "snowvariants:slab_nether_brick_snow" }
+  }
+}
