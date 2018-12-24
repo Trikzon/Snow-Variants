@@ -82,49 +82,7 @@ public class BlockStairBase extends BlockStairs {
 			drops.add(new ItemStack(Item.getItemFromBlock(Blocks.PURPUR_STAIRS), 1));
 			drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
 		}
-//		switch (state.getBlock().getDefaultState()) {
-//			case ModBlocks.stairsOakSnow.getDefaultState():
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.OAK_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_cobblestone_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.STONE_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_brick_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.BRICK_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_stone_brick_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.STONE_BRICK_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_nether_brick_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.NETHER_BRICK_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_sandstone_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SANDSTONE_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_spruce_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SPRUCE_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_birch_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.BIRCH_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_jungle_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.JUNGLE_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_quartz_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.QUARTZ_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_acacia_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.ACACIA_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_dark_oak_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.DARK_OAK_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_red_sandstone_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.RED_SANDSTONE_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//			case "tile.snowvariants.stairs_purpur_snow":
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.PURPUR_STAIRS), 1));
-//				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
-//		}
 	}
+
+	//TODO Add PickBlock
 }
