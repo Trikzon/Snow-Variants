@@ -1,10 +1,6 @@
 package trikzon.snowvariants.handlers;
 
-import net.minecraft.block.BlockStairs;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -12,7 +8,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
@@ -134,6 +129,96 @@ public class SnowTransformationHandler {
 					if(worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
 						worldIn.setBlockState(blockPos, ModBlocks.stairsPurpurSnow.getDefaultState().withProperty(BlockStairs.FACING, worldIn.getBlockState(blockPos).getValue(BlockStairs.FACING)).withProperty(BlockStairs.HALF, worldIn.getBlockState(blockPos).getValue(BlockStairs.HALF)).withProperty(BlockStairs.SHAPE, worldIn.getBlockState(blockPos).getValue(BlockStairs.SHAPE)));
 						worldIn.playSound((EntityPlayer)null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+						if (!playerIn.isCreative())
+							item.shrink(1);
+					}
+				}
+				if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.STONE_SLAB.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStoneSlab.HALF).equals(BlockSlab.EnumBlockHalf.BOTTOM)) {
+						if (worldIn.getBlockState(blockPos).getValue(BlockStoneSlab.VARIANT).equals(BlockStoneSlab.EnumType.STONE)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabStoneSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						} else if (worldIn.getBlockState(blockPos).getValue(BlockStoneSlab.VARIANT).equals(BlockStoneSlab.EnumType.SAND)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabSandstoneSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						} else if (worldIn.getBlockState(blockPos).getValue(BlockStoneSlab.VARIANT).equals(BlockStoneSlab.EnumType.COBBLESTONE)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabCobblestoneSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						} else if (worldIn.getBlockState(blockPos).getValue(BlockStoneSlab.VARIANT).equals(BlockStoneSlab.EnumType.BRICK)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabBrickSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						} else if (worldIn.getBlockState(blockPos).getValue(BlockStoneSlab.VARIANT).equals(BlockStoneSlab.EnumType.SMOOTHBRICK)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabStoneBrickSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						} else if (worldIn.getBlockState(blockPos).getValue(BlockStoneSlab.VARIANT).equals(BlockStoneSlab.EnumType.NETHERBRICK)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabNetherBrickSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						} else if (worldIn.getBlockState(blockPos).getValue(BlockStoneSlab.VARIANT).equals(BlockStoneSlab.EnumType.QUARTZ)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabQuartzSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						}
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.WOODEN_SLAB.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockWoodSlab.HALF).equals(BlockSlab.EnumBlockHalf.BOTTOM)) {
+						if(worldIn.getBlockState(blockPos).getValue(BlockWoodSlab.VARIANT).equals(BlockPlanks.EnumType.OAK)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabOakSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						} else if (worldIn.getBlockState(blockPos).getValue(BlockWoodSlab.VARIANT).equals(BlockPlanks.EnumType.SPRUCE)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabSpruceSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						} else if (worldIn.getBlockState(blockPos).getValue(BlockWoodSlab.VARIANT).equals(BlockPlanks.EnumType.BIRCH)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabBirchSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						} else if (worldIn.getBlockState(blockPos).getValue(BlockWoodSlab.VARIANT).equals(BlockPlanks.EnumType.JUNGLE)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabJungleSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						} else if (worldIn.getBlockState(blockPos).getValue(BlockWoodSlab.VARIANT).equals(BlockPlanks.EnumType.ACACIA)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabAcaciaSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						} else if (worldIn.getBlockState(blockPos).getValue(BlockWoodSlab.VARIANT).equals(BlockPlanks.EnumType.DARK_OAK)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabDarkOakSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						}
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.STONE_SLAB2.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockStoneSlabNew.HALF).equals(BlockStoneSlabNew.EnumBlockHalf.BOTTOM)) {
+						if(worldIn.getBlockState(blockPos).getValue(BlockStoneSlabNew.VARIANT).equals(BlockStoneSlabNew.EnumType.RED_SANDSTONE)) {
+							worldIn.setBlockState(blockPos, ModBlocks.slabRedSandstoneSnow.getDefaultState());
+							worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
+							if (!playerIn.isCreative())
+								item.shrink(1);
+						}
+					}
+				}else if(worldIn.getBlockState(blockPos).getBlock().getDefaultState().equals(Blocks.PURPUR_SLAB.getDefaultState())) {
+					if(worldIn.getBlockState(blockPos).getValue(BlockPurpurSlab.HALF).equals(BlockPurpurSlab.EnumBlockHalf.BOTTOM)) {
+						worldIn.setBlockState(blockPos, ModBlocks.slabPurpurSnow.getDefaultState());
+						worldIn.playSound((EntityPlayer) null, blockPos, SoundEvents.BLOCK_SNOW_PLACE, SoundCategory.BLOCKS, 1, 1);
 						if (!playerIn.isCreative())
 							item.shrink(1);
 					}

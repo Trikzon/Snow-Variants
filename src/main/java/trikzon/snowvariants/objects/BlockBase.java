@@ -11,6 +11,8 @@ import trikzon.snowvariants.SnowVariants;
  */
 public class BlockBase extends Block {
 
+	public static final double PIXEL_LENGTH = 1D/16D;
+
 	public BlockBase(String name, SoundType soundType, Material material) {
 		super(material);
 		this.setUnlocalizedName(SnowVariants.MODID + "." + name);

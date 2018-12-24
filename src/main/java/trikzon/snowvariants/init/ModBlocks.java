@@ -1,9 +1,11 @@
 package trikzon.snowvariants.init;
 
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import trikzon.snowvariants.objects.BlockStairBase;
+import trikzon.snowvariants.objects.blocks.BlockSnowySlab;
 
 public class ModBlocks {
 
@@ -48,4 +50,49 @@ public class ModBlocks {
 
 	@GameRegistry.ObjectHolder("snowvariants:stairs_purpur_snow")
 	public static BlockStairBase stairsPurpurSnow = new BlockStairBase(Blocks.PURPUR_BLOCK, "stairs_purpur_snow", SoundType.STONE);
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_stone_snow")
+	public static BlockSnowySlab slabStoneSnow = new BlockSnowySlab("slab_stone_snow", SoundType.STONE, Blocks.STONE.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_sandstone_snow")
+	public static BlockSnowySlab slabSandstoneSnow = new BlockSnowySlab("slab_sandstone_snow", SoundType.STONE, Blocks.SANDSTONE.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_cobblestone_snow")
+	public static BlockSnowySlab slabCobblestoneSnow = new BlockSnowySlab("slab_cobblestone_snow", SoundType.STONE, Blocks.COBBLESTONE.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_brick_snow")
+	public static BlockSnowySlab slabBrickSnow = new BlockSnowySlab("slab_brick_snow", SoundType.STONE, Blocks.BRICK_BLOCK.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_stone_brick_snow")
+	public static BlockSnowySlab slabStoneBrickSnow = new BlockSnowySlab("slab_stone_brick_snow", SoundType.STONE, Blocks.STONEBRICK.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_nether_brick_snow")
+	public static BlockSnowySlab slabNetherBrickSnow = new BlockSnowySlab("slab_nether_brick_snow", SoundType.STONE, Blocks.NETHER_BRICK.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_quartz_snow")
+	public static BlockSnowySlab slabQuartzSnow = new BlockSnowySlab("slab_quartz_snow", SoundType.STONE, Blocks.QUARTZ_BLOCK.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_oak_snow")
+	public static BlockSnowySlab slabOakSnow = new BlockSnowySlab("slab_oak_snow", SoundType.STONE, Blocks.PLANKS.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_spruce_snow")
+	public static BlockSnowySlab slabSpruceSnow = new BlockSnowySlab("slab_spruce_snow", SoundType.STONE, Blocks.PLANKS.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_birch_snow")
+	public static BlockSnowySlab slabBirchSnow = new BlockSnowySlab("slab_birch_snow", SoundType.STONE, Blocks.PLANKS.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_jungle_snow")
+	public static BlockSnowySlab slabJungleSnow = new BlockSnowySlab("slab_jungle_snow", SoundType.STONE, Blocks.PLANKS.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_acacia_snow")
+	public static BlockSnowySlab slabAcaciaSnow = new BlockSnowySlab("slab_acacia_snow", SoundType.STONE, Blocks.PLANKS.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_dark_oak_snow")
+	public static BlockSnowySlab slabDarkOakSnow = new BlockSnowySlab("slab_dark_oak_snow", SoundType.STONE, Blocks.PLANKS.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_red_sandstone_snow")
+	public static BlockSnowySlab slabRedSandstoneSnow = new BlockSnowySlab("slab_red_sandstone_snow", SoundType.STONE, Blocks.RED_SANDSTONE.getDefaultState().getMaterial());
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_purpur_snow")
+	public static BlockSnowySlab slabPurpurSnow = new BlockSnowySlab("slab_purpur_snow", SoundType.STONE, Blocks.PURPUR_BLOCK.getDefaultState().getMaterial());
 }

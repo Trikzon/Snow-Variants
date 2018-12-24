@@ -42,5 +42,21 @@ public class CommonProxy {
 		event.getRegistry().register(ModBlocks.stairsDarkOakSnow);
 		event.getRegistry().register(ModBlocks.stairsRedSandstoneSnow);
 		event.getRegistry().register(ModBlocks.stairsPurpurSnow);
+
+		event.getRegistry().register(ModBlocks.slabStoneSnow);
+		event.getRegistry().register(ModBlocks.slabSandstoneSnow);
+		event.getRegistry().register(ModBlocks.slabCobblestoneSnow);
+		event.getRegistry().register(ModBlocks.slabBrickSnow);
+		event.getRegistry().register(ModBlocks.slabStoneBrickSnow);
+		event.getRegistry().register(ModBlocks.slabNetherBrickSnow);
+		event.getRegistry().register(ModBlocks.slabQuartzSnow);
+		event.getRegistry().register(ModBlocks.slabOakSnow);
+		event.getRegistry().register(ModBlocks.slabSpruceSnow);
+		event.getRegistry().register(ModBlocks.slabBirchSnow);
+		event.getRegistry().register(ModBlocks.slabJungleSnow);
+		event.getRegistry().register(ModBlocks.slabAcaciaSnow);
+		event.getRegistry().register(ModBlocks.slabDarkOakSnow);
+		event.getRegistry().register(ModBlocks.slabRedSandstoneSnow);
+		event.getRegistry().register(ModBlocks.slabPurpurSnow);
 	}
 }
