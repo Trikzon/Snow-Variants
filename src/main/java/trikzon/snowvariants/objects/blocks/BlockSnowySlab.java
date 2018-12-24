@@ -50,6 +50,7 @@ public class BlockSnowySlab extends BlockBase {
 		} else if(originBlock.equals(Blocks.PURPUR_BLOCK)) {
 			this.setSoundType(SoundType.STONE);
 		}
+		this.useNeighborBrightness = true;
 	}
 
 	@Override
