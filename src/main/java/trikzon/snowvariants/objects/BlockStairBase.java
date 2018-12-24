@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -11,7 +12,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 import trikzon.snowvariants.SnowVariants;
 import trikzon.snowvariants.init.ModBlocks;
 
@@ -84,5 +87,37 @@ public class BlockStairBase extends BlockStairs {
 		}
 	}
 
-	//TODO Add PickBlock
+	@Override
+	public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+		if(state.getBlock().getDefaultState().equals(ModBlocks.stairsOakSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.OAK_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsCobblestoneSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.STONE_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsBrickSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.BRICK_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsStoneBrickSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.STONE_BRICK_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsNetherBrickSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.NETHER_BRICK_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsSandstoneSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.SANDSTONE_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsSpruceSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.SPRUCE_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsBirchSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.BIRCH_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsJungleSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.JUNGLE_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsQuartzSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.QUARTZ_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsAcaciaSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.ACACIA_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsDarkOakSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.DARK_OAK_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsRedSandstoneSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.RED_SANDSTONE_STAIRS));
+		}else if(state.getBlock().getDefaultState().equals(ModBlocks.stairsPurpurSnow.getDefaultState())) {
+			return new ItemStack(Item.getItemFromBlock(Blocks.PURPUR_STAIRS));
+		}
+		return super.getPickBlock(state, target, world, pos, player);
+	}
 }
