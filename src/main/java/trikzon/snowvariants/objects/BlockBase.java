@@ -2,7 +2,13 @@ package trikzon.snowvariants.objects;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import trikzon.snowvariants.SnowVariants;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 /**
  * A class to be used in all my mods to make block making easier

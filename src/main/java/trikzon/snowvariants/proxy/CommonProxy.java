@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import trikzon.snowvariants.compat.ModChecker;
 import trikzon.snowvariants.handlers.SnowTransformationHandler;
 import trikzon.snowvariants.init.ModBlocks;
 
@@ -58,5 +59,11 @@ public class CommonProxy {
 		event.getRegistry().register(ModBlocks.slabDarkOakSnow);
 		event.getRegistry().register(ModBlocks.slabRedSandstoneSnow);
 		event.getRegistry().register(ModBlocks.slabPurpurSnow);
+
+		//Gingerbread Support:
+		if(ModChecker.isGingerbreadLoaded) {
+			event.getRegistry().register(ModBlocks.slabGingerbreadSnow);
+			event.getRegistry().register(ModBlocks.stairsGingerbreadSnow);
+		}
 	}
 }

@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
+import trikzon.snowvariants.compat.ModChecker;
 import trikzon.snowvariants.proxy.CommonProxy;
 
 @Mod(modid = SnowVariants.MODID, name = SnowVariants.NAME, version = SnowVariants.VERSION)
@@ -23,15 +24,20 @@ public class SnowVariants {
 
 	public static Logger logger;
 
+	public static ModChecker modChecker;
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		logger = event.getModLog();
 		proxy.preInit(event);
+		modChecker = new ModChecker();
+		ModChecker.printSuccessMessage();
 	}
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent e) {
 		proxy.init(e);
+		ModChecker.checkErrorMessage();
 	}
 
 	@Mod.EventHandler

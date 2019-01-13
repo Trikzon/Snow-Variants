@@ -95,4 +95,11 @@ public class ModBlocks {
 
 	@GameRegistry.ObjectHolder("snowvariants:slab_purpur_snow")
 	public static BlockSnowySlab slabPurpurSnow = new BlockSnowySlab("slab_purpur_snow", Blocks.PURPUR_BLOCK);
+
+	//Gingerbread Support:
+	@GameRegistry.ObjectHolder("snowvariants:stairs_gingerbread_snow")
+	public static BlockStairBase stairsGingerbreadSnow = new BlockStairBase(Blocks.PLANKS, "stairs_gingerbread_snow", SoundType.WOOD);
+
+	@GameRegistry.ObjectHolder("snowvariants:slab_gingerbread_snow")
+	public static BlockSnowySlab slabGingerbreadSnow = new BlockSnowySlab("slab_gingerbread_snow", Blocks.PLANKS);
 }

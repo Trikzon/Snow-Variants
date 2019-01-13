@@ -28,7 +28,7 @@ public class SnowTransformationHandler {
 		ItemStack item = playerIn.getHeldItem(EnumHand.MAIN_HAND);
 
 		if(item.getItem().equals(Item.getItemFromBlock(Blocks.SNOW_LAYER))) {
-			RayTraceResult rayTraceResult = getRaytrace(playerIn, worldIn);
+			RayTraceResult rayTraceResult = getRaytraceResult(playerIn, worldIn);
 			if (rayTraceResult == null)
 				return;
 			if (rayTraceResult.typeOfHit == RayTraceResult.Type.BLOCK)
@@ -229,7 +229,7 @@ public class SnowTransformationHandler {
 		}
 	}
 
-	public RayTraceResult getRaytrace(EntityPlayer playerIn, World worldIn) {
+	public RayTraceResult getRaytraceResult(EntityPlayer playerIn, World worldIn) {
 		float f1 = playerIn.prevRotationPitch + (playerIn.rotationPitch - playerIn.prevRotationPitch) * 1.0F;
 		float f2 = playerIn.prevRotationYaw + (playerIn.rotationYaw - playerIn.prevRotationYaw) * 1.0F;
 		double d0 = playerIn.prevPosX + (playerIn.posX - playerIn.prevPosX) * 1.0D;

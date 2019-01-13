@@ -1,9 +1,7 @@
 package trikzon.snowvariants.objects.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockStoneSlab;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,6 +17,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import trikzon.snowvariants.compat.ModChecker;
+import trikzon.snowvariants.compat.ModGetter;
 import trikzon.snowvariants.init.ModBlocks;
 import trikzon.snowvariants.objects.BlockBase;
 
@@ -128,6 +128,13 @@ public class BlockSnowySlab extends BlockBase {
 			drops.add(new ItemStack(Item.getItemFromBlock(Blocks.PURPUR_SLAB), 1, 0));
 			drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
 		}
+		if(ModChecker.isGingerbreadLoaded) {
+			if(state.getBlock().getDefaultState().equals(ModBlocks.slabGingerbreadSnow.getDefaultState())) {
+				if(ModGetter.slabGingerbread==null) ModChecker.printErrorMessageSlabGingerbread();
+				else drops.add(new ItemStack(Item.getItemFromBlock(ModGetter.slabGingerbread), 1));
+				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
+			}
+		}
 	}
 
 	@Override
@@ -164,6 +171,10 @@ public class BlockSnowySlab extends BlockBase {
 			return new ItemStack(Item.getItemFromBlock(Blocks.STONE_SLAB2), 1, 0);
 		else if(state.getBlock().getDefaultState().equals(ModBlocks.slabPurpurSnow.getDefaultState()))
 			return new ItemStack(Item.getItemFromBlock(Blocks.PURPUR_SLAB),1, 0);
+		else if(ModChecker.isGingerbreadLoaded)
+			if(state.getBlock().getDefaultState().equals(ModBlocks.slabGingerbreadSnow.getDefaultState()))
+				if(ModGetter.slabGingerbread==null) ModChecker.printErrorMessageSlabGingerbread();
+				else return new ItemStack(Item.getItemFromBlock(ModGetter.slabGingerbread), 1, 0);
 		return new ItemStack(Items.AIR);
 	}
 }
