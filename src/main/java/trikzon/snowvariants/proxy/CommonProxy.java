@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import trikzon.snowvariants.compat.ModChecker;
+import trikzon.snowvariants.handlers.RightClickTransformationHandler;
 import trikzon.snowvariants.handlers.SnowTransformationHandler;
 import trikzon.snowvariants.init.ModBlocks;
 
@@ -19,9 +20,9 @@ public class CommonProxy {
 	}
 
 	public void init(FMLInitializationEvent e) {
-		SnowTransformationHandler snowTransformation = new SnowTransformationHandler();
-		MinecraftForge.EVENT_BUS.register(snowTransformation);
-		FMLCommonHandler.instance().bus().register(snowTransformation);
+		RightClickTransformationHandler rightClickTransformationHandler = new RightClickTransformationHandler();
+		MinecraftForge.EVENT_BUS.register(rightClickTransformationHandler);
+		FMLCommonHandler.instance().bus().register(rightClickTransformationHandler);
 	}
 
 	public void postInit(FMLPostInitializationEvent e) {
