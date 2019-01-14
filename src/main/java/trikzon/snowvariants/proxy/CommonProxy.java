@@ -11,7 +11,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import trikzon.snowvariants.compat.ModChecker;
 import trikzon.snowvariants.handlers.RightClickTransformationHandler;
-import trikzon.snowvariants.handlers.SnowTransformationHandler;
 import trikzon.snowvariants.init.ModBlocks;
 
 @Mod.EventBusSubscriber

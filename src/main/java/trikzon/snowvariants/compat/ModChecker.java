@@ -11,15 +11,22 @@ public class ModChecker {
 		this.isGingerbreadLoaded = Loader.isModLoaded("gingerbread");
 	}
 
-	public static void printSuccessMessage() {
+	public static void printSuccessMessagePreInit() {
 		if(isGingerbreadLoaded) SnowVariants.logger.info("Snow Variants detected Gingerbread: enabling support!");
 	}
 
-	public static void checkErrorMessage() {
+	public static void printSuccessMessageInit() {
+		int modTotal = 0;
+		int objectTotal = 0;
+
 		if(isGingerbreadLoaded) {
 			if(ModGetter.stairsGingerbread==null) printErrorMessageStairsGingerbread();
+			else objectTotal += 1;
 			if(ModGetter.slabGingerbread==null) printErrorMessageSlabGingerbread();
+			else objectTotal +=1;
+			modTotal += 1;
 		}
+		if(modTotal>0) SnowVariants.logger.info("Snow Variants successfully added support for " + modTotal + " mods with " + objectTotal + " objects detected.");
 	}
 
 	public static void printErrorMessage(String modName, String modID, String blockID) {

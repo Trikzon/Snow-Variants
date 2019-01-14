@@ -31,13 +31,13 @@ public class SnowVariants {
 		logger = event.getModLog();
 		proxy.preInit(event);
 		modChecker = new ModChecker();
-		ModChecker.printSuccessMessage();
+		ModChecker.printSuccessMessagePreInit();
 	}
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent e) {
 		proxy.init(e);
-		ModChecker.checkErrorMessage();
+		ModChecker.printSuccessMessageInit();
 	}
 
 	@Mod.EventHandler

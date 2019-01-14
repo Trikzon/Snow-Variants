@@ -68,8 +68,10 @@ public class RightClickTransformationHandler {
 				this.convertSlab(worldIn, playerIn, blockPos, Blocks.PURPUR_SLAB, ModBlocks.slabPurpurSnow);
 
 				if(ModChecker.isGingerbreadLoaded) {
-					this.convertStair(worldIn, playerIn, blockPos, ModGetter.stairsGingerbread, ModBlocks.stairsGingerbreadSnow);
-					this.convertSlab(worldIn, playerIn, blockPos, ModGetter.slabGingerbread, ModBlocks.slabGingerbreadSnow);
+					if(ModGetter.stairsGingerbread==null) ModChecker.printErrorMessageStairsGingerbread();
+					else this.convertStair(worldIn, playerIn, blockPos, ModGetter.stairsGingerbread, ModBlocks.stairsGingerbreadSnow);
+					if(ModGetter.slabGingerbread==null) ModChecker.printErrorMessageSlabGingerbread();
+					else this.convertSlab(worldIn, playerIn, blockPos, ModGetter.slabGingerbread, ModBlocks.slabGingerbreadSnow);
 				}
 			}
 		}
