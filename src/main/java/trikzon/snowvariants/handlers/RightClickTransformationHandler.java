@@ -17,9 +17,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import trikzon.snowvariants.SnowVariants;
 import trikzon.snowvariants.compat.ModChecker;
-import trikzon.snowvariants.compat.ModGetter;
+import trikzon.snowvariants.compat.Gingerbread;
 import trikzon.snowvariants.init.ModBlocks;
 
 public class RightClickTransformationHandler {
@@ -68,10 +67,10 @@ public class RightClickTransformationHandler {
 				this.convertSlab(worldIn, playerIn, blockPos, Blocks.PURPUR_SLAB, ModBlocks.slabPurpurSnow);
 
 				if(ModChecker.isGingerbreadLoaded) {
-					if(ModGetter.stairsGingerbread==null) ModChecker.printErrorMessageStairsGingerbread();
-					else this.convertStair(worldIn, playerIn, blockPos, ModGetter.stairsGingerbread, ModBlocks.stairsGingerbreadSnow);
-					if(ModGetter.slabGingerbread==null) ModChecker.printErrorMessageSlabGingerbread();
-					else this.convertSlab(worldIn, playerIn, blockPos, ModGetter.slabGingerbread, ModBlocks.slabGingerbreadSnow);
+					if(Gingerbread.stairsGingerbreadGingerbread==null) ModChecker.printErrorMessageStairsGingerbreadGingerbread();
+					else this.convertStair(worldIn, playerIn, blockPos, Gingerbread.stairsGingerbreadGingerbread, ModBlocks.stairsGingerbreadSnow);
+					if(Gingerbread.slabGingerbreadGingerbread==null) ModChecker.printErrorMessageSlabGingerbreadGingerbread();
+					else this.convertSlab(worldIn, playerIn, blockPos, Gingerbread.slabGingerbreadGingerbread, ModBlocks.slabGingerbreadSnow);
 				}
 			}
 		}

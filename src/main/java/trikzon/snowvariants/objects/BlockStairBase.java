@@ -18,7 +18,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import trikzon.snowvariants.SnowVariants;
 import trikzon.snowvariants.compat.ModChecker;
-import trikzon.snowvariants.compat.ModGetter;
+import trikzon.snowvariants.compat.Gingerbread;
 import trikzon.snowvariants.init.ModBlocks;
 
 import java.util.Random;
@@ -88,8 +88,8 @@ public class BlockStairBase extends BlockStairs {
 		}
 		if(ModChecker.isGingerbreadLoaded) {
 			if(state.getBlock().getDefaultState().equals(ModBlocks.stairsGingerbreadSnow.getDefaultState())) {
-				if(ModGetter.stairsGingerbread==null) ModChecker.printErrorMessageStairsGingerbread();
-				else drops.add(new ItemStack(Item.getItemFromBlock(ModGetter.stairsGingerbread), 1));
+				if(Gingerbread.stairsGingerbreadGingerbread==null) ModChecker.printErrorMessageStairsGingerbreadGingerbread();
+				else drops.add(new ItemStack(Item.getItemFromBlock(Gingerbread.stairsGingerbreadGingerbread), 1));
 				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
 			}
 		}
@@ -129,8 +129,8 @@ public class BlockStairBase extends BlockStairs {
 			return new ItemStack(Item.getItemFromBlock(Blocks.PURPUR_STAIRS));
 		}else if(ModChecker.isGingerbreadLoaded)
 			if(state.getBlock().getDefaultState().equals(ModBlocks.stairsGingerbreadSnow.getDefaultState()))
-				if(ModGetter.stairsGingerbread==null) ModChecker.printErrorMessageStairsGingerbread();
-				else return new ItemStack(Item.getItemFromBlock(ModGetter.stairsGingerbread), 1, 0);
+				if(Gingerbread.stairsGingerbreadGingerbread==null) ModChecker.printErrorMessageStairsGingerbreadGingerbread();
+				else return new ItemStack(Item.getItemFromBlock(Gingerbread.stairsGingerbreadGingerbread), 1, 0);
 		return super.getPickBlock(state, target, world, pos, player);
 	}
 }

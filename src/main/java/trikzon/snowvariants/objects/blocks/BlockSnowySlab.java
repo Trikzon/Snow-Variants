@@ -18,7 +18,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import trikzon.snowvariants.compat.ModChecker;
-import trikzon.snowvariants.compat.ModGetter;
+import trikzon.snowvariants.compat.Gingerbread;
 import trikzon.snowvariants.init.ModBlocks;
 import trikzon.snowvariants.objects.BlockBase;
 
@@ -130,8 +130,8 @@ public class BlockSnowySlab extends BlockBase {
 		}
 		if(ModChecker.isGingerbreadLoaded) {
 			if(state.getBlock().getDefaultState().equals(ModBlocks.slabGingerbreadSnow.getDefaultState())) {
-				if(ModGetter.slabGingerbread==null) ModChecker.printErrorMessageSlabGingerbread();
-				else drops.add(new ItemStack(Item.getItemFromBlock(ModGetter.slabGingerbread), 1));
+				if(Gingerbread.slabGingerbreadGingerbread==null) ModChecker.printErrorMessageSlabGingerbreadGingerbread();
+				else drops.add(new ItemStack(Item.getItemFromBlock(Gingerbread.slabGingerbreadGingerbread), 1));
 				drops.add(new ItemStack(Item.getItemFromBlock(Blocks.SNOW_LAYER), 1));
 			}
 		}
@@ -173,8 +173,8 @@ public class BlockSnowySlab extends BlockBase {
 			return new ItemStack(Item.getItemFromBlock(Blocks.PURPUR_SLAB),1, 0);
 		else if(ModChecker.isGingerbreadLoaded)
 			if(state.getBlock().getDefaultState().equals(ModBlocks.slabGingerbreadSnow.getDefaultState()))
-				if(ModGetter.slabGingerbread==null) ModChecker.printErrorMessageSlabGingerbread();
-				else return new ItemStack(Item.getItemFromBlock(ModGetter.slabGingerbread), 1, 0);
+				if(Gingerbread.slabGingerbreadGingerbread==null) ModChecker.printErrorMessageSlabGingerbreadGingerbread();
+				else return new ItemStack(Item.getItemFromBlock(Gingerbread.slabGingerbreadGingerbread), 1, 0);
 		return new ItemStack(Items.AIR);
 	}
 }

@@ -31,7 +31,7 @@ public class SnowVariants {
 		logger = event.getModLog();
 		proxy.preInit(event);
 		modChecker = new ModChecker();
-		ModChecker.printSuccessMessagePreInit();
+		ModChecker.successMessagePreInit();
 	}
 
 	@Mod.EventHandler
