@@ -34,17 +34,17 @@ public class ModChecker {
 			modTotal += 1;
 		}
 		if(isBotaniaLoaded) {
-			if(Botania.slabBotaniaLivingwood==null) printErrorMessageSlabBotaniaLivingWood();
+			if(Botania.slabBotaniaLivingwood==null) printErrorMessageSlabBotaniaLivingwood();
 			else objectTotal +=1;
-			if(Botania.slabBotaniaLivingwoodPlank==null) printErrorMessageSlabBotaniaLivingWoodPlank();
+			if(Botania.slabBotaniaLivingwoodPlank==null) printErrorMessageSlabBotaniaLivingwoodPlank();
 			else objectTotal +=1;
 			if(Botania.slabBotaniaLivingrock==null) printErrorMessageSlabBotaniaLivingrock();
 			else objectTotal +=1;
 			if(Botania.slabBotaniaLivingrockBrick==null) printErrorMessageSlabBotaniaLivingrockBrick();
 			else objectTotal +=1;
-			if(Botania.slabBotaniaDreamwood==null) printErrorMessageSlabBotaniaDreamWood();
+			if(Botania.slabBotaniaDreamwood==null) printErrorMessageSlabBotaniaDreamwood();
 			else objectTotal +=1;
-			if(Botania.slabBotaniaDreamWoodPlank==null) printErrorMessageSlabBotaniaDreamWoodPlank();
+			if(Botania.slabBotaniaDreamWoodPlank==null) printErrorMessageSlabBotaniaDreamwoodPlank();
 			else objectTotal +=1;
 			if(Botania.slabBotaniaQuartzSmokey==null) printErrorMessageSlabBotaniaQuartzSmokey();
 			else objectTotal +=1;
@@ -147,12 +147,12 @@ public class ModChecker {
 	public static void printErrorMessageSlabGingerbreadGingerbread() { printErrorMessage("Gingerbread", "gingerbread", "block_gingerbread_slab_half"); }
 
 	//Botania Errors
-	public static void printErrorMessageSlabBotaniaLivingWood() { printErrorMessage("Botania", "botania", "livingwood0slab"); }
-	public static void printErrorMessageSlabBotaniaLivingWoodPlank() { printErrorMessage("Botania", "botania", "livingwood1slab"); }
+	public static void printErrorMessageSlabBotaniaLivingwood() { printErrorMessage("Botania", "botania", "livingwood0slab"); }
+	public static void printErrorMessageSlabBotaniaLivingwoodPlank() { printErrorMessage("Botania", "botania", "livingwood1slab"); }
 	public static void printErrorMessageSlabBotaniaLivingrock() { printErrorMessage("Botania", "botania", "livingrock0slab");}
 	public static void printErrorMessageSlabBotaniaLivingrockBrick() { printErrorMessage("Botania", "botania", "livingrock1slab"); }
-	public static void printErrorMessageSlabBotaniaDreamWood() { printErrorMessage("Botania", "botania", "dreamwood0slab");}
-	public static void printErrorMessageSlabBotaniaDreamWoodPlank() { printErrorMessage("Botania", "botania", "dreamwood1slab"); }
+	public static void printErrorMessageSlabBotaniaDreamwood() { printErrorMessage("Botania", "botania", "dreamwood0slab");}
+	public static void printErrorMessageSlabBotaniaDreamwoodPlank() { printErrorMessage("Botania", "botania", "dreamwood1slab"); }
 	public static void printErrorMessageSlabBotaniaQuartzSmokey() { printErrorMessage("Botania", "botania", "quartzslabdarkhalf"); }
 	public static void printErrorMessageSlabBotaniaQuartzMana() { printErrorMessage("Botania", "botania", "quartzslabmanahalf"); }
 	public static void printErrorMessageSlabBotaniaQuartzBlaze() { printErrorMessage("Botania", "botania", "quartzslabblazehalf"); }
