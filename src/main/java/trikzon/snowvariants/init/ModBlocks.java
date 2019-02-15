@@ -102,4 +102,51 @@ public class ModBlocks {
 
 	@GameRegistry.ObjectHolder("snowvariants:slab_gingerbread_snow")
 	public static BlockSnowySlab slabGingerbreadSnow = new BlockSnowySlab("slab_gingerbread_snow", Blocks.PLANKS);
+
+	//Botania Support:
+	public static BlockSnowySlab slabBotaniaLivingwood = new BlockSnowySlab("slab_botania_livingwood", Blocks.PLANKS);
+	public static BlockSnowySlab slabBotaniaLivingwoodPlank = new BlockSnowySlab("slab_botania_livingwood_plank", Blocks.PLANKS);
+	public static BlockSnowySlab slabBotaniaLivingrock = new BlockSnowySlab("slab_botania_livingrock", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaLivingrockBrick = new BlockSnowySlab("slab_botania_livingrock_brick", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaDreamwood = new BlockSnowySlab("slab_botania_dreamwood", Blocks.PLANKS);
+	public static BlockSnowySlab slabBotaniaDreamwoodPlank = new BlockSnowySlab("slab_botania_dreamwood_plank", Blocks.PLANKS);
+	public static BlockSnowySlab slabBotaniaQuartzSmokey = new BlockSnowySlab("slab_botania_quartz_smokey", Blocks.QUARTZ_BLOCK);
+	public static BlockSnowySlab slabBotaniaQuartzMana = new BlockSnowySlab("slab_botania_quartz_mana", Blocks.QUARTZ_BLOCK);
+	public static BlockSnowySlab slabBotaniaQuartzBlaze = new BlockSnowySlab("slab_botania_quartz_blaze", Blocks.QUARTZ_BLOCK);
+	public static BlockSnowySlab slabBotaniaQuartzLavender = new BlockSnowySlab("slab_botania_quartz_lavender", Blocks.QUARTZ_BLOCK);
+	public static BlockSnowySlab slabBotaniaQuartzRed = new BlockSnowySlab("slab_botania_quartz_red", Blocks.QUARTZ_BLOCK);
+	public static BlockSnowySlab slabBotaniaQuartzElven = new BlockSnowySlab("slab_botania_quartz_elven", Blocks.QUARTZ_BLOCK);
+	public static BlockSnowySlab slabBotaniaQuartzSunny = new BlockSnowySlab("slab_botania_quartz_sunny", Blocks.QUARTZ_BLOCK);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneForest = new BlockSnowySlab("slab_botania_metamorphic_stone_forest", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStonePlains = new BlockSnowySlab("slab_botania_metamorphic_stone_plains", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneMountain = new BlockSnowySlab("slab_botania_metamorphic_stone_mountain", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneFungal = new BlockSnowySlab("slab_botania_metamorphic_stone_fungal", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneSwamp = new BlockSnowySlab("slab_botania_metamorphic_stone_swamp", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneDesert = new BlockSnowySlab("slab_botania_metamorphic_stone_desert", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneTaiga = new BlockSnowySlab("slab_botania_metamorphic_stone_taiga", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneMesa = new BlockSnowySlab("slab_botania_metamorphic_stone_mesa", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicCobblestoneForest = new BlockSnowySlab("slab_botania_metamorphic_cobblestone_forest", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicCobblestonePlains = new BlockSnowySlab("slab_botania_metamorphic_cobblestone_plains", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicCobblestoneMountain = new BlockSnowySlab("slab_botania_metamorphic_cobblestone_mountain", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicCobblestoneFungal = new BlockSnowySlab("slab_botania_metamorphic_cobblestone_fungal", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicCobblestoneSwamp = new BlockSnowySlab("slab_botania_metamorphic_cobblestone_swamp", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicCobblestoneDesert = new BlockSnowySlab("slab_botania_metamorphic_cobblestone_desert", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicCobblestoneTaiga = new BlockSnowySlab("slab_botania_metamorphic_cobblestone_taiga", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicCobblestoneMesa = new BlockSnowySlab("slab_botania_metamorphic_cobblestone_mesa", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneBrickForest = new BlockSnowySlab("slab_botania_metamorphic_stone_brick_forest", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneBrickPlains = new BlockSnowySlab("slab_botania_metamorphic_stone_brick_plains", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneBrickMountain = new BlockSnowySlab("slab_botania_metamorphic_stone_brick_mountain", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneBrickFungal = new BlockSnowySlab("slab_botania_metamorphic_stone_brick_fungal", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneBrickSwamp = new BlockSnowySlab("slab_botania_metamorphic_stone_brick_swamp", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneBrickDesert = new BlockSnowySlab("slab_botania_metamorphic_stone_brick_desert", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneBrickTaiga = new BlockSnowySlab("slab_botania_metamorphic_stone_brick_taiga", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaMetamorphicStoneBrickMesa = new BlockSnowySlab("slab_botania_metamorphic_stone_brick_mesa", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaPortuguesePavementWhite = new BlockSnowySlab("slab_botania_portuguese_pavement_white", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaPortuguesePavementBlack = new BlockSnowySlab("slab_botania_portuguese_pavement_black", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaPortuguesePavementBlue = new BlockSnowySlab("slab_botania_portuguese_pavement_blue", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaPortuguesePavementRed = new BlockSnowySlab("slab_botania_portuguese_pavement_red", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaPortuguesePavementYellow = new BlockSnowySlab("slab_botania_portuguese_pavement_yellow", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaPortuguesePavementGreen = new BlockSnowySlab("slab_botania_portuguese_pavement_green", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaShimmerrock = new BlockSnowySlab("slab_botania_shimmerrock", Blocks.STONE);
+	public static BlockSnowySlab slabBotaniaShimmerwoodPlank = new BlockSnowySlab("slab_botania_shimmerwood_plank", Blocks.PLANKS);
 }

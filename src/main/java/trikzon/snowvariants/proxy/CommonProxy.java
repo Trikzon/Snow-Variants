@@ -65,5 +65,53 @@ public class CommonProxy {
 			event.getRegistry().register(ModBlocks.slabGingerbreadSnow);
 			event.getRegistry().register(ModBlocks.stairsGingerbreadSnow);
 		}
+
+		if(ModChecker.isBotaniaLoaded) {
+			event.getRegistry().register(ModBlocks.slabBotaniaLivingwood);
+			event.getRegistry().register(ModBlocks.slabBotaniaLivingwoodPlank);
+			event.getRegistry().register(ModBlocks.slabBotaniaLivingrock);
+			event.getRegistry().register(ModBlocks.slabBotaniaLivingrockBrick);
+			event.getRegistry().register(ModBlocks.slabBotaniaDreamwood);
+			event.getRegistry().register(ModBlocks.slabBotaniaDreamwoodPlank);
+			event.getRegistry().register(ModBlocks.slabBotaniaQuartzSmokey);
+			event.getRegistry().register(ModBlocks.slabBotaniaQuartzMana);
+			event.getRegistry().register(ModBlocks.slabBotaniaQuartzBlaze);
+			event.getRegistry().register(ModBlocks.slabBotaniaQuartzLavender);
+			event.getRegistry().register(ModBlocks.slabBotaniaQuartzRed);
+			event.getRegistry().register(ModBlocks.slabBotaniaQuartzElven);
+			event.getRegistry().register(ModBlocks.slabBotaniaQuartzSunny);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneForest);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStonePlains);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneMountain);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneFungal);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneSwamp);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneDesert);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneTaiga);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneMesa);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicCobblestoneForest);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicCobblestonePlains);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicCobblestoneMountain);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicCobblestoneFungal);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicCobblestoneSwamp);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicCobblestoneDesert);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicCobblestoneTaiga);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicCobblestoneMesa);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneBrickForest);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneBrickPlains);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneBrickMountain);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneBrickFungal);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneBrickSwamp);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneBrickDesert);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneBrickTaiga);
+			event.getRegistry().register(ModBlocks.slabBotaniaMetamorphicStoneBrickMesa);
+			event.getRegistry().register(ModBlocks.slabBotaniaPortuguesePavementWhite);
+			event.getRegistry().register(ModBlocks.slabBotaniaPortuguesePavementBlack);
+			event.getRegistry().register(ModBlocks.slabBotaniaPortuguesePavementBlue);
+			event.getRegistry().register(ModBlocks.slabBotaniaPortuguesePavementRed);
+			event.getRegistry().register(ModBlocks.slabBotaniaPortuguesePavementYellow);
+			event.getRegistry().register(ModBlocks.slabBotaniaPortuguesePavementGreen);
+			event.getRegistry().register(ModBlocks.slabBotaniaShimmerrock);
+			event.getRegistry().register(ModBlocks.slabBotaniaShimmerwoodPlank);
+		}
 	}
 }
