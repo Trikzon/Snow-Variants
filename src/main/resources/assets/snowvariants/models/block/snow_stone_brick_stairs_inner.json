@@ -1,0 +1,10 @@
+{
+	"parent": "snowvariants:block/snow_stairs_inner",
+	"textures": {
+		"bottom": "block/stone_bricks",
+		"top": "block/stone_bricks",
+		"side": "block/stone_bricks",
+		"snowTop": "block/snow",
+		"snowSide": "snowvariants:block/snow_side"
+	}
+}
