@@ -1,0 +1,8 @@
+{
+  "parent": "snowvariants:block/snow_slab_all",
+  "textures": {
+    "side": "block/nether_bricks",
+    "snowTop": "block/snow",
+    "snowSide": "snowvariants:block/snow_side"
+  }
+}

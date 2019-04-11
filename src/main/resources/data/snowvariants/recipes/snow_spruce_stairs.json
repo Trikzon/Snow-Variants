@@ -1,0 +1,18 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:snow"
+    },
+    "B": {
+      "item": "minecraft:spruce_stairs"
+    }
+  },
+  "result": {
+    "item": "snowvariants:snow_spruce_stairs"
+  }
+}

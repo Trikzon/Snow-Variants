@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "snowvariants:block/snow_cobblestone_slab"
+    }
+  }
+}

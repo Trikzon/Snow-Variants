@@ -8,6 +8,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.Half;
+import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
@@ -16,6 +17,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import trikzon.snowvariants.blocks.VariantSlab;
 import trikzon.snowvariants.blocks.VariantStairs;
 import trikzon.snowvariants.init.ModBlocks;
 
@@ -42,6 +44,7 @@ public class VariantTransformEvent {
                     boolean success = false;
 
                     for (VariantStairs variantStairs : ModBlocks.VARIANT_STAIRS_LIST) {
+                        if(success) break;
                         if(blockAtPos.equals(variantStairs.getOriginStair())) {
                             if(!blockStateAtPos.get(BlockStateProperties.HALF).equals(Half.BOTTOM)) break;
                             worldIn.setBlockState(blockPos, variantStairs.getDefaultState()
@@ -49,14 +52,23 @@ public class VariantTransformEvent {
                                     .with(BlockStateProperties.HALF, blockStateAtPos.get(BlockStateProperties.HALF))
                                     .with(BlockStateProperties.STAIRS_SHAPE, blockStateAtPos.get(BlockStateProperties.STAIRS_SHAPE))
                                     .with(BlockStateProperties.WATERLOGGED, blockStateAtPos.get(BlockStateProperties.WATERLOGGED)));
+                            worldIn.playSound(playerIn, blockPos, variantStairs.getTransformingSound().getPlaceSound(), SoundCategory.BLOCKS, (variantStairs.getTransformingSound().getVolume() + 1.0F) / 2.0F, variantStairs.getTransformingSound().getPitch() * 0.8F);
                             success = true;
 
                         }
+                    }
+                    for (VariantSlab variantSlab : ModBlocks.VARIANT_SLABS_LIST) {
+                        if(success) break;
+                        if(blockAtPos.equals(variantSlab.getOriginSlab())) {
+                            if(!blockStateAtPos.get(BlockStateProperties.SLAB_TYPE).equals(SlabType.BOTTOM)) break;
+                            worldIn.setBlockState(blockPos, variantSlab.getDefaultState());
+                            worldIn.playSound(playerIn, blockPos, variantSlab.getTransformingSound().getPlaceSound(), SoundCategory.BLOCKS, (variantSlab.getTransformingSound().getVolume() + 1.0F) / 2.0F, variantSlab.getTransformingSound().getPitch() * 0.8F);
+                            success = true;
 
-                        if(success) {
-                            worldIn.playSound(playerIn, blockPos, SoundType.SNOW.getPlaceSound(), SoundCategory.BLOCKS, (SoundType.SNOW.getVolume() + 1.0F) / 2.0F, SoundType.SNOW.getPitch() * 0.8F);
-                            if(!playerIn.isCreative()) itemInHand.shrink(1);
                         }
+                    }
+                    if(success) {
+                        if(!playerIn.isCreative()) itemInHand.shrink(1);
                     }
                 }
             }

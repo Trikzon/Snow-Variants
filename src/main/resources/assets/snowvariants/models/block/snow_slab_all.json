@@ -1,0 +1,10 @@
+{
+  "parent": "snowvariants:block/snow_slab",
+  "textures": {
+    "bottom": "#side",
+    "top": "#side",
+    "side": "#side",
+    "snowTop": "block/snow",
+    "snowSide": "snowvariants:block/snow_side"
+  }
+}
