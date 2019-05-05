@@ -4,10 +4,17 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import trikzon.snowvariants.init.ModBlocks;
 
@@ -46,11 +53,35 @@ public class VariantStairs extends BlockStairs {
         return originStair;
     }
 
-    public ItemStack getTransformingItem() {
-        return transformingItem;
-    }
-
     public SoundType getTransformingSound() {
         return transformingSound;
+    }
+
+    @Override
+    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, IBlockReader world, BlockPos pos, EntityPlayer player) {
+        if(player.isCreative()) return super.getPickBlock(state, target, world, pos, player);
+        System.out.println(new ItemStack(this));
+        System.out.println(player.inventory.getSizeInventory());
+        for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
+            System.out.println(new ItemStack(player.inventory.getStackInSlot(i).getItem()));
+            if(new ItemStack(player.inventory.getStackInSlot(i).getItem()).toString().equals(new ItemStack(this).toString())) {
+                return super.getPickBlock(state, target, world, pos, player);
+            }
+        }
+        if(target.sideHit.equals(EnumFacing.UP)) return transformingItem;
+        return new ItemStack(originStair);
+    }
+
+    @Override
+    public boolean onBlockActivated(IBlockState state, World worldIn, BlockPos pos, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
+        if(!worldIn.isRemote) {
+            if(player.getHeldItem(hand).getItem() instanceof ItemSpade) {
+                worldIn.setBlockState(pos, originStair.getDefaultState());
+                if(!player.isCreative())
+                    worldIn.spawnEntity(new EntityItem(worldIn, pos.getX() + 0.5f, pos.up().getY(), pos.getZ() + 0.5f, transformingItem));
+                return true;
+            }
+        }
+        return false;
     }
 }
