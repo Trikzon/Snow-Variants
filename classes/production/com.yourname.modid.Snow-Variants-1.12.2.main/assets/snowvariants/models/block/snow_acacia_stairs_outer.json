@@ -1,0 +1,10 @@
+{
+  "parent": "snowvariants:block/snow_stairs_outer",
+  "textures": {
+    "bottom": "block/acacia_planks",
+    "top": "block/acacia_planks",
+    "side": "block/acacia_planks",
+    "snowTop": "block/snow",
+    "snowSide": "snowvariants:block/snow_side"
+  }
+}

@@ -2,49 +2,53 @@ package trikzon.snowvariants.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.NonNullList;
+import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import trikzon.snowvariants.SnowVariants;
 import trikzon.snowvariants.init.ModBlocks;
 
 public class VariantSlab extends Block {
     private final Block originSlab;
     private final ItemStack transformingItem;
     private final SoundType transformingSound;
-    protected static final VoxelShape VARIANT_SLAB_SHAPE = Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D);
+    protected static final AxisAlignedBB AABB_SLAB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D);
 
-    public VariantSlab(Block originSlab, ItemStack transformingItem, SoundType transformingSound, Properties properties) {
-        super(properties);
+
+    public VariantSlab(Block originSlab, ItemStack transformingItem, SoundType transformingSound, Material material, float hardness, float resistance, SoundType sound) {
+        super(material);
 
         this.originSlab = originSlab;
         this.transformingItem = transformingItem;
         this.transformingSound = transformingSound;
 
+        this.setHardness(hardness);
+        this.setResistance(resistance);
+        this.setSoundType(sound);
+        this.setCreativeTab(SnowVariants.itemGroup);
+
         ModBlocks.VARIANT_SLABS_LIST.add(this);
     }
 
     @Override
-    public void getDrops(IBlockState state, NonNullList<ItemStack> drops, World world, BlockPos pos, int fortune) {
+    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
         drops.add(transformingItem);
         drops.add(new ItemStack(originSlab));
     }
 
     @Override
-    public VoxelShape getShape(IBlockState state, IBlockReader worldIn, BlockPos pos) {
-        return VARIANT_SLAB_SHAPE;
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        return AABB_SLAB;
     }
 
     @Override
@@ -53,12 +57,12 @@ public class VariantSlab extends Block {
     }
 
     @Override
-    public BlockRenderLayer getRenderLayer() {
+    public BlockRenderLayer getBlockLayer() {
         return BlockRenderLayer.CUTOUT_MIPPED;
     }
 
     @Override
-    public BlockFaceShape getBlockFaceShape(IBlockReader worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
+    public BlockFaceShape getBlockFaceShape(IBlockAccess p_193383_1_, IBlockState p_193383_2_, BlockPos p_193383_3_, EnumFacing face) {
         if(!face.equals(EnumFacing.DOWN)) return BlockFaceShape.UNDEFINED;
         else return BlockFaceShape.SOLID;
     }
@@ -72,12 +76,9 @@ public class VariantSlab extends Block {
     }
 
     @Override
-    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, IBlockReader world, BlockPos pos, EntityPlayer player) {
+    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
         if(player.isCreative()) return super.getPickBlock(state, target, world, pos, player);
-        System.out.println(new ItemStack(this));
-        System.out.println(player.inventory.getSizeInventory());
         for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
-            System.out.println(new ItemStack(player.inventory.getStackInSlot(i).getItem()));
             if(new ItemStack(player.inventory.getStackInSlot(i).getItem()).toString().equals(new ItemStack(this).toString())) {
                 return super.getPickBlock(state, target, world, pos, player);
             }
@@ -87,7 +88,7 @@ public class VariantSlab extends Block {
     }
 
     @Override
-    public boolean onBlockActivated(IBlockState state, World worldIn, BlockPos pos, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         if(!worldIn.isRemote) {
             if(player.getHeldItem(hand).getItem() instanceof ItemSpade) {
                 worldIn.setBlockState(pos, originSlab.getDefaultState());
