@@ -1,0 +1,16 @@
+[
+{
+  "modid": "snowvariants",
+  "name": "Snow Variants",
+  "description": "Snow Variants adds the ability to right click stairs and slabs with a snow layer to 'place' the layer on the stair or slab.",
+  "version": "1.2.0",
+  "mcversion": "${mcversion}",
+  "url": "https://minecraft.curseforge.com/projects/snow-variants",
+  "updateUrl": "",
+  "authorList": ["Trikzon"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
