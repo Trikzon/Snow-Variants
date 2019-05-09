@@ -74,10 +74,7 @@ public class VariantSlab extends Block {
     @Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, IBlockReader world, BlockPos pos, EntityPlayer player) {
         if(player.isCreative()) return super.getPickBlock(state, target, world, pos, player);
-        System.out.println(new ItemStack(this));
-        System.out.println(player.inventory.getSizeInventory());
         for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
-            System.out.println(new ItemStack(player.inventory.getStackInSlot(i).getItem()));
             if(new ItemStack(player.inventory.getStackInSlot(i).getItem()).toString().equals(new ItemStack(this).toString())) {
                 return super.getPickBlock(state, target, world, pos, player);
             }
