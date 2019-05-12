@@ -41,6 +41,7 @@ public class VariantSlab extends Block {
         this.setResistance(resistance);
         this.setSoundType(sound);
         this.setCreativeTab(SnowVariants.itemGroup);
+        this.setLightOpacity(0);
 
         ModBlocks.VARIANT_SLABS_LIST.add(this);
     }
@@ -48,7 +49,7 @@ public class VariantSlab extends Block {
     @Override
     public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
         drops.add(transformingItem);
-        drops.add(new ItemStack(originSlab));
+        drops.add(new ItemStack(originSlab, 1, meta));
     }
 
     @Override
@@ -57,7 +58,17 @@ public class VariantSlab extends Block {
     }
 
     @Override
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
     public boolean isFullCube(IBlockState p_149686_1_) {
+        return false;
+    }
+
+    @Override
+    public boolean isFullBlock(IBlockState state) {
         return false;
     }
 
@@ -93,7 +104,7 @@ public class VariantSlab extends Block {
             }
         }
         if(target.sideHit.equals(EnumFacing.UP)) return transformingItem;
-        return new ItemStack(originSlab);
+        return new ItemStack(originSlab, 1, meta);
     }
 
     @Override
