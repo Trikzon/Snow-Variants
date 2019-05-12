@@ -1,15 +1,13 @@
 package trikzon.snowvariants.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockStoneSlab;
-import net.minecraft.block.BlockWoodSlab;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
@@ -111,7 +109,7 @@ public class VariantSlab extends Block {
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         if(!worldIn.isRemote) {
             if(player.getHeldItem(hand).getItem() instanceof ItemSpade) {
-                worldIn.setBlockState(pos, originSlab.getDefaultState());
+                worldIn.setBlockState(pos, originSlab.getStateFromMeta(meta));
                 if(!player.isCreative())
                     worldIn.spawnEntity(new EntityItem(worldIn, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, transformingItem));
                 return true;

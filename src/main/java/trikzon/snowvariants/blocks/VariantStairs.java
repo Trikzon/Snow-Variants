@@ -80,7 +80,10 @@ public class VariantStairs extends BlockStairs {
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         if(!worldIn.isRemote) {
             if(player.getHeldItem(hand).getItem() instanceof ItemSpade) {
-                worldIn.setBlockState(pos, originStair.getDefaultState());
+                worldIn.setBlockState(pos, originStair.getDefaultState()
+                        .withProperty(BlockStairs.SHAPE, worldIn.getBlockState(pos).getValue(BlockStairs.SHAPE))
+                        .withProperty(BlockStairs.HALF, worldIn.getBlockState(pos).getValue(BlockStairs.HALF))
+                        .withProperty(BlockStairs.FACING, worldIn.getBlockState(pos).getValue(BlockStairs.FACING)));
                 if(!player.isCreative())
                     worldIn.spawnEntity(new EntityItem(worldIn, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, transformingItem));
                 return true;
