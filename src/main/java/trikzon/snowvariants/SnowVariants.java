@@ -6,6 +6,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import trikzon.snowvariants.events.VariantTransformEvent;
 import trikzon.snowvariants.init.ModBlocks;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -27,8 +28,8 @@ public class SnowVariants {
     public SnowVariants() {
         MinecraftForge.EVENT_BUS.register(this);
 
-//        VariantTransformEvent variantTransformEvent = new VariantTransformEvent();
-//        MinecraftForge.EVENT_BUS.register(variantTransformEvent);
+        VariantTransformEvent variantTransformEvent = new VariantTransformEvent();
+        MinecraftForge.EVENT_BUS.register(variantTransformEvent);
 
     }
 }
