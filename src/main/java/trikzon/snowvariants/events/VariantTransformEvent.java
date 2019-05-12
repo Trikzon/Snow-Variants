@@ -23,22 +23,17 @@ public class VariantTransformEvent {
     @SubscribeEvent()
     public void onBlockRightClick(PlayerInteractEvent.RightClickBlock event) {
         World worldIn = event.getWorld();
-        System.out.println("1");
         if (!(event.getEntity() instanceof EntityPlayer)) return;
         EntityPlayer playerIn = event.getEntityPlayer();
-        System.out.println("1");
         RayTraceResult rayTraceResult = this.getRaytraceResult(playerIn, worldIn);
         if(rayTraceResult == null) return;
-        System.out.println("1");
         if(rayTraceResult.typeOfHit == RayTraceResult.Type.BLOCK) {
             if(rayTraceResult.sideHit.equals(EnumFacing.UP)) {
                 ItemStack itemInHand = playerIn.getHeldItem(EnumHand.MAIN_HAND);
                 BlockPos blockPos = rayTraceResult.getBlockPos();
                 IBlockState blockStateAtPos = worldIn.getBlockState(blockPos);
                 Block blockAtPos = blockStateAtPos.getBlock();
-                System.out.println("1");
                 if(new ItemStack(itemInHand.getItem()).toString().equals(new ItemStack(Blocks.SNOW).toString())) {
-                    System.out.println("1");
                     boolean success = false;
 
                     for (VariantStairs variantStairs : ModBlocks.VARIANT_STAIRS_LIST) {
@@ -56,7 +51,7 @@ public class VariantTransformEvent {
                     }
                     for (VariantSlab variantSlab : ModBlocks.VARIANT_SLABS_LIST) {
                         if(success) break;
-                        if(blockAtPos.equals(variantSlab.getOriginSlab())) {
+                        if(blockAtPos.equals(variantSlab.getOriginSlab())&&(blockAtPos.getMetaFromState(blockStateAtPos)==variantSlab.getMeta())){
                             if(!blockStateAtPos.getValue(BlockSlab.HALF).equals(BlockSlab.EnumBlockHalf.BOTTOM)) break;
                             worldIn.setBlockState(blockPos, variantSlab.getDefaultState());
                             worldIn.playSound(playerIn, blockPos, variantSlab.getTransformingSound().getPlaceSound(), SoundCategory.BLOCKS, (variantSlab.getTransformingSound().getVolume() + 1.0F) / 2.0F, variantSlab.getTransformingSound().getPitch() * 0.8F);
@@ -64,10 +59,8 @@ public class VariantTransformEvent {
 
                         }
                     }
-                    if(success) {
+                    if(success)
                         if(!playerIn.isCreative()) itemInHand.shrink(1);
-                        System.out.println("1");
-                    }
                 }
             }
         }

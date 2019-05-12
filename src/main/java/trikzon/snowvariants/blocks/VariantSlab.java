@@ -1,8 +1,11 @@
 package trikzon.snowvariants.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockStoneSlab;
+import net.minecraft.block.BlockWoodSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
@@ -22,15 +25,17 @@ public class VariantSlab extends Block {
     private final Block originSlab;
     private final ItemStack transformingItem;
     private final SoundType transformingSound;
+    private final int meta;
     protected static final AxisAlignedBB AABB_SLAB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D);
 
 
-    public VariantSlab(Block originSlab, ItemStack transformingItem, SoundType transformingSound, Material material, float hardness, float resistance, SoundType sound) {
+    public VariantSlab(Block originSlab, int meta, ItemStack transformingItem, SoundType transformingSound, Material material, float hardness, float resistance, SoundType sound) {
         super(material);
 
         this.originSlab = originSlab;
         this.transformingItem = transformingItem;
         this.transformingSound = transformingSound;
+        this.meta = meta;
 
         this.setHardness(hardness);
         this.setResistance(resistance);
@@ -73,6 +78,10 @@ public class VariantSlab extends Block {
 
     public SoundType getTransformingSound() {
         return transformingSound;
+    }
+
+    public int getMeta() {
+        return meta;
     }
 
     @Override
