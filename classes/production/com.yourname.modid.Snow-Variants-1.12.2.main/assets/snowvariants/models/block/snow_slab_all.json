@@ -4,7 +4,7 @@
     "bottom": "#side",
     "top": "#side",
     "side": "#side",
-    "snowTop": "block/snow",
-    "snowSide": "snowvariants:block/snow_side"
+    "snowTop": "blocks/snow",
+    "snowSide": "snowvariants:blocks/snow_side"
   }
 }

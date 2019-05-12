@@ -1,7 +1,7 @@
 {
   "variants": {
-    "": {
-      "model": "snowvariants:block/snow_red_sandstone_slab"
+    "normal": {
+      "model": "snowvariants:snow_red_sandstone_slab"
     }
   }
 }

@@ -1,10 +1,10 @@
 {
 	"parent": "snowvariants:block/snow_stairs_inner",
 	"textures": {
-		"bottom": "block/prismarine",
-		"top": "block/prismarine",
-		"side": "block/prismarine",
-		"snowTop": "block/snow",
-		"snowSide": "snowvariants:block/snow_side"
+		"bottom": "blocks/prismarine",
+		"top": "blocks/prismarine",
+		"side": "blocks/prismarine",
+		"snowTop": "blocks/snow",
+		"snowSide": "snowvariants:blocks/snow_side"
 	}
 }

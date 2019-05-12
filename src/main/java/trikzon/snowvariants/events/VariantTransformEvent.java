@@ -1,8 +1,8 @@
 //package trikzon.snowvariants.events;
 //
-//import net.minecraft.block.Block;
-//import net.minecraft.block.SoundType;
-//import net.minecraft.block.state.IBlockState;
+//import net.minecraft.blocks.Block;
+//import net.minecraft.blocks.SoundType;
+//import net.minecraft.blocks.state.IBlockState;
 //import net.minecraft.entity.player.EntityPlayer;
 //import net.minecraft.init.Blocks;
 //import net.minecraft.item.ItemStack;

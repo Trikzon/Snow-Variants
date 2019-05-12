@@ -1,10 +1,10 @@
 {
 	"parent": "snowvariants:block/snow_stairs_inner",
 	"textures": {
-		"bottom": "block/nether_bricks",
-		"top": "block/nether_bricks",
-		"side": "block/nether_bricks",
-		"snowTop": "block/snow",
-		"snowSide": "snowvariants:block/snow_side"
+		"bottom": "blocks/nether_brick",
+		"top": "blocks/nether_brick",
+		"side": "blocks/nether_brick",
+		"snowTop": "blocks/snow",
+		"snowSide": "snowvariants:blocks/snow_side"
 	}
 }
