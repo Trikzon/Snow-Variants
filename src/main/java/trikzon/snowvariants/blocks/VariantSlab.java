@@ -110,6 +110,7 @@ public class VariantSlab extends Block {
         if(!worldIn.isRemote) {
             if(player.getHeldItem(hand).getItem() instanceof ItemSpade) {
                 worldIn.setBlockState(pos, originSlab.getStateFromMeta(meta));
+                worldIn.playSound(player, pos, getTransformingSound().getBreakSound(), SoundCategory.BLOCKS, (getTransformingSound().getVolume() + 1.0F) / 2.0F, getTransformingSound().getPitch() * 0.8F);
                 if(!player.isCreative())
                     worldIn.spawnEntity(new EntityItem(worldIn, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, transformingItem));
                 return true;

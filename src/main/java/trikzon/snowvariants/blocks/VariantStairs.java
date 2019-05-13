@@ -9,10 +9,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.NonNullList;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
@@ -84,8 +81,13 @@ public class VariantStairs extends BlockStairs {
                         .withProperty(BlockStairs.SHAPE, worldIn.getBlockState(pos).getValue(BlockStairs.SHAPE))
                         .withProperty(BlockStairs.HALF, worldIn.getBlockState(pos).getValue(BlockStairs.HALF))
                         .withProperty(BlockStairs.FACING, worldIn.getBlockState(pos).getValue(BlockStairs.FACING)));
-                if(!player.isCreative())
+                //TODO: Have right clicking with a shovel play a sound
+                worldIn.playSound(player, pos, getTransformingSound().getBreakSound(), SoundCategory.BLOCKS, (getTransformingSound().getVolume() + 1.0F) / 2.0F, getTransformingSound().getPitch() * 0.8F);
+                if(!player.isCreative()) {
                     worldIn.spawnEntity(new EntityItem(worldIn, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, transformingItem));
+                    //TODO: Have the shovel get damaged when right clicking with it
+//                    player.getHeldItem(hand).getItem().setDamage(player.getHeldItem(hand), player.getHeldItem(hand).getItemDamage() - 1);
+                }
                 return true;
             }
         }
