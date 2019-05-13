@@ -1,5 +1,5 @@
 {
-	"parent": "snowvariants:block/snow_stairs",
+	"parent": "snowvariants:block/snow_stairs_outer",
 	"textures": {
 		"bottom": "block/spruce_planks",
 		"top": "block/spruce_planks",
