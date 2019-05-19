@@ -1,16 +1,17 @@
 
 {
-  "type": "crafting_shaped",
+  "type": "minecraft:crafting_shaped",
   "pattern": [
     "A",
     "B"
   ],
   "key": {
     "A": {
-      "item": "minecraft:snow"
+      "item": "minecraft:snow_layer"
     },
     "B": {
-      "item": "minecraft:jungle_slab"
+      "item": "minecraft:wooden_slab",
+      "data": 3
     }
   },
   "result": {

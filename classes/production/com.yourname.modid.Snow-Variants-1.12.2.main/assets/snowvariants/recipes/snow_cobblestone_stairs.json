@@ -1,15 +1,15 @@
 {
-  "type": "crafting_shaped",
+  "type": "minecraft:crafting_shaped",
   "pattern": [
     "A",
     "B"
   ],
   "key": {
     "A": {
-      "item": "minecraft:snow"
+      "item": "minecraft:snow_layer"
     },
     "B": {
-      "item": "minecraft:cobblestone_stairs"
+      "item": "minecraft:stone_stairs"
     }
   },
   "result": {
