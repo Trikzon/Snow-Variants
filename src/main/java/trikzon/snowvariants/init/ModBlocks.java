@@ -1,6 +1,5 @@
 package trikzon.snowvariants.init;
 
-import net.minecraft.block.BlockStoneSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -21,7 +20,7 @@ public class ModBlocks {
     public static final VariantStairs SNOW_OAK_STAIRS = new VariantStairs(Blocks.PLANKS, Blocks.OAK_STAIRS, new ItemStack(Blocks.SNOW_LAYER), SoundType.SNOW, Material.WOOD, 1.5f,1.5f, SoundType.WOOD);
     public static final VariantStairs SNOW_COBBLESTONE_STAIRS = new VariantStairs(Blocks.COBBLESTONE, Blocks.STONE_STAIRS, new ItemStack(Blocks.SNOW_LAYER), SoundType.SNOW, Material.ROCK, 1.5f, 1.5f, SoundType.STONE);
     public static final VariantStairs SNOW_BRICK_STAIRS = new VariantStairs(Blocks.BRICK_BLOCK, Blocks.BRICK_STAIRS, new ItemStack(Blocks.SNOW_LAYER), SoundType.SNOW, Material.ROCK, 1.5f, 1.5f, SoundType.STONE);
-    public static final VariantStairs SNOW_STONE_BRICK_STAIRS = new VariantStairs(Blocks.STONE_BRICK_STAIRS, Blocks.STONE_BRICK_STAIRS, new ItemStack(Blocks.SNOW_LAYER), SoundType.SNOW, Material.ROCK, 1.5f, 1.5f, SoundType.STONE);
+    public static final VariantStairs SNOW_STONE_BRICK_STAIRS = new VariantStairs(Blocks.STONEBRICK, Blocks.STONE_BRICK_STAIRS, new ItemStack(Blocks.SNOW_LAYER), SoundType.SNOW, Material.ROCK, 1.5f, 1.5f, SoundType.STONE);
     public static final VariantStairs SNOW_NETHER_BRICK_STAIRS = new VariantStairs(Blocks.NETHER_BRICK, Blocks.NETHER_BRICK_STAIRS, new ItemStack(Blocks.SNOW_LAYER), SoundType.SNOW, Material.ROCK, 1.5f, 1.5f, SoundType.STONE);
     public static final VariantStairs SNOW_SANDSTONE_STAIRS = new VariantStairs(Blocks.SANDSTONE, Blocks.SANDSTONE_STAIRS, new ItemStack(Blocks.SNOW_LAYER), SoundType.SNOW, Material.ROCK, 1.5f, 1.5f, SoundType.STONE);
     public static final VariantStairs SNOW_SPRUCE_STAIRS = new VariantStairs(Blocks.PLANKS, Blocks.SPRUCE_STAIRS, new ItemStack(Blocks.SNOW_LAYER), SoundType.SNOW, Material.WOOD, 1.5f, 1.5f, SoundType.WOOD);

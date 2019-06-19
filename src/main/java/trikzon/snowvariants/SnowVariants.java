@@ -13,7 +13,7 @@ import trikzon.snowvariants.init.ModBlocks;
 @Mod(modid = SnowVariants.MODID, name = SnowVariants.NAME, version = SnowVariants.VERSION   )
 public class SnowVariants {
 
-    public static final String MODID = "snowvariants", NAME = "Snow Variants", VERSION = "1.2.0";
+    public static final String MODID = "snowvariants", NAME = "Snow Variants", VERSION = "1.12.2-1.2.2";
 
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger();
