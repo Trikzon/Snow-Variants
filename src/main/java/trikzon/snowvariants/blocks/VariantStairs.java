@@ -68,17 +68,22 @@ public class VariantStairs extends BlockStairs {
 
     @Override
     public boolean onBlockActivated(IBlockState state, World worldIn, BlockPos pos, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
-        if(!worldIn.isRemote) {
-            if(player.getHeldItem(hand).getItem() instanceof ItemSpade) {
+        if(player.getHeldItem(hand).getItem() instanceof ItemSpade && side.equals(EnumFacing.UP)) {
+            /**If world is server*/
+            if (!worldIn.isRemote) {
                 worldIn.setBlockState(pos, originStair.getDefaultState()
                         .with(BlockStairs.SHAPE, worldIn.getBlockState(pos).get(BlockStairs.SHAPE))
                         .with(BlockStairs.HALF, worldIn.getBlockState(pos).get(BlockStairs.HALF))
                         .with(BlockStairs.FACING, worldIn.getBlockState(pos).get(BlockStairs.FACING)));
+                if(!player.isCreative()) {
+                    worldIn.spawnEntity(new EntityItem(worldIn, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, transformingItem));
+                    player.getHeldItem(hand).damageItem(1, player);
+                }
+                /**If world is client*/
+            } else {
                 worldIn.playSound(player, pos, getTransformingSound().getBreakSound(), SoundCategory.BLOCKS, (getTransformingSound().getVolume() + 1.0F) / 2.0F, getTransformingSound().getPitch() * 0.8F);
-                if(!player.isCreative())
-                    worldIn.spawnEntity(new EntityItem(worldIn, pos.getX() + 0.5f, pos.up().getY(), pos.getZ() + 0.5f, transformingItem));
-                return true;
             }
+            return true;
         }
         return false;
     }
