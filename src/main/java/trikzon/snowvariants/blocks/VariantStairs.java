@@ -75,21 +75,22 @@ public class VariantStairs extends BlockStairs {
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        if(!worldIn.isRemote) {
-            if(player.getHeldItem(hand).getItem() instanceof ItemSpade) {
+        if(player.getHeldItem(hand).getItem() instanceof ItemSpade && facing.equals(EnumFacing.UP)) {
+            /**If world is server*/
+            if (!worldIn.isRemote) {
                 worldIn.setBlockState(pos, originStair.getDefaultState()
                         .withProperty(BlockStairs.SHAPE, worldIn.getBlockState(pos).getValue(BlockStairs.SHAPE))
                         .withProperty(BlockStairs.HALF, worldIn.getBlockState(pos).getValue(BlockStairs.HALF))
                         .withProperty(BlockStairs.FACING, worldIn.getBlockState(pos).getValue(BlockStairs.FACING)));
-                //TODO: Have right clicking with a shovel play a sound
-                worldIn.playSound(player, pos, getTransformingSound().getBreakSound(), SoundCategory.BLOCKS, (getTransformingSound().getVolume() + 1.0F) / 2.0F, getTransformingSound().getPitch() * 0.8F);
                 if(!player.isCreative()) {
                     worldIn.spawnEntity(new EntityItem(worldIn, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, transformingItem));
-                    //TODO: Have the shovel get damaged when right clicking with it
-//                    player.getHeldItem(hand).getItem().setDamage(player.getHeldItem(hand), player.getHeldItem(hand).getItemDamage() - 1);
+                    player.getHeldItem(hand).damageItem(1, player);
                 }
-                return true;
+                /**If world is client*/
+            } else {
+                worldIn.playSound(player, pos, getTransformingSound().getBreakSound(), SoundCategory.BLOCKS, (getTransformingSound().getVolume() + 1.0F) / 2.0F, getTransformingSound().getPitch() * 0.8F);
             }
+            return true;
         }
         return false;
     }
