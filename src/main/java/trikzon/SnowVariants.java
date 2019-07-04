@@ -1,5 +1,6 @@
 package trikzon;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.DistExecutor;
@@ -12,6 +13,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import trikzon.blocks.ModBlocks;
 import trikzon.setup.ClientProxy;
 import trikzon.setup.IProxy;
 import trikzon.setup.ServerProxy;
@@ -28,7 +30,8 @@ public class SnowVariants {
     public static ItemGroup itemGroup = new ItemGroup(SnowVariants.MODID) {
         @Override
         public ItemStack createIcon() {
-            return null;
+            if (ModBlocks.MINECRAFT_SPRUCE_STAIRS != null) return new ItemStack(ModBlocks.MINECRAFT_SPRUCE_STAIRS);
+            return new ItemStack(Blocks.SPRUCE_STAIRS);
         }
     };
 
