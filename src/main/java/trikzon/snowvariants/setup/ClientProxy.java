@@ -1,4 +1,4 @@
-package trikzon.setup;
+package trikzon.snowvariants.setup;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;

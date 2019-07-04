@@ -1,4 +1,4 @@
-package trikzon.setup;
+package trikzon.snowvariants.setup;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -7,10 +7,10 @@ import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import trikzon.SnowVariants;
-import trikzon.blocks.ModBlocks;
-import trikzon.blocks.SnowSlab;
-import trikzon.blocks.SnowStair;
+import trikzon.snowvariants.SnowVariants;
+import trikzon.snowvariants.blocks.ModBlocks;
+import trikzon.snowvariants.blocks.SnowSlab;
+import trikzon.snowvariants.blocks.SnowStair;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = SnowVariants.MODID)
 public class RegistryEvents {

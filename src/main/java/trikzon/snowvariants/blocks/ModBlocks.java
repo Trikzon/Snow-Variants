@@ -1,7 +1,7 @@
-package trikzon.blocks;
+package trikzon.snowvariants.blocks;
 
 import net.minecraftforge.registries.ObjectHolder;
-import trikzon.SnowVariants;
+import trikzon.snowvariants.SnowVariants;
 
 import java.util.ArrayList;
 import java.util.List;

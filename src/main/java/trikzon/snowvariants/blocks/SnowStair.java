@@ -1,8 +1,8 @@
-package trikzon.blocks;
+package trikzon.snowvariants.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.StairsBlock;
-import trikzon.SnowVariants;
+import trikzon.snowvariants.SnowVariants;
 
 public class SnowStair extends StairsBlock {
 

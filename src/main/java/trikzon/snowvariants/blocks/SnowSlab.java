@@ -1,7 +1,7 @@
-package trikzon.blocks;
+package trikzon.snowvariants.blocks;
 
 import net.minecraft.block.Block;
-import trikzon.SnowVariants;
+import trikzon.snowvariants.SnowVariants;
 
 public class SnowSlab extends Block {
 

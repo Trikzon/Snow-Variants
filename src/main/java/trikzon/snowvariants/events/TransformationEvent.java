@@ -1,4 +1,4 @@
-package trikzon.events;
+package trikzon.snowvariants.events;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -8,15 +8,14 @@ import net.minecraft.state.properties.Half;
 import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import trikzon.blocks.ModBlocks;
-import trikzon.blocks.SnowSlab;
-import trikzon.blocks.SnowStair;
+import trikzon.snowvariants.blocks.ModBlocks;
+import trikzon.snowvariants.blocks.SnowSlab;
+import trikzon.snowvariants.blocks.SnowStair;
 
 @Mod.EventBusSubscriber
 public class TransformationEvent {

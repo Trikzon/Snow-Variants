@@ -1,10 +1,9 @@
-package trikzon;
+package trikzon.snowvariants;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -13,10 +12,10 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import trikzon.blocks.ModBlocks;
-import trikzon.setup.ClientProxy;
-import trikzon.setup.IProxy;
-import trikzon.setup.ServerProxy;
+import trikzon.snowvariants.blocks.ModBlocks;
+import trikzon.snowvariants.setup.ClientProxy;
+import trikzon.snowvariants.setup.IProxy;
+import trikzon.snowvariants.setup.ServerProxy;
 
 
 @Mod(SnowVariants.MODID)
