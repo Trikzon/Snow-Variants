@@ -12,7 +12,7 @@ public class Generator {
 
     public static void main(String[] args) {
 
-        new SnowStairTemplate("minecraft_spruce_stairs", "spruce_planks");
+        new SnowStairTemplate("minecraft", "spruce_stairs", "spruce_planks");
 
         for (SnowStairTemplate temp : STAIRS) {
             /**Blockstate*/
@@ -42,6 +42,22 @@ public class Generator {
             /**Outer Block Model*/
             try (FileWriter file = new FileWriter("src/main/resources/assets/snowvariants/models/block/" + temp.name + "_outer" + ".json")) {
                 file.write(stairOuterBlockModel(temp));
+                file.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            /**Item Model*/
+            try (FileWriter file = new FileWriter("src/main/resources/assets/snowvariants/models/item/" + temp.name + ".json")) {
+                file.write(blockItemModel(temp.name));
+                file.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            /**Recipe*/
+            try (FileWriter file = new FileWriter("src/main/resources/data/snowvariants/recipes/" + temp.name + ".json")) {
+                file.write(recipe(temp));
                 file.flush();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -107,9 +123,9 @@ public class Generator {
         String out = "{\n" +
                 "  \"parent\": \"" + MODID + ":block/snow_stair\",\n" +
                 "  \"textures\": {\n" +
-                "    \"bottom\": \"minecraft:block/" + bottom + "\",\n" +
-                "    \"top\": \"minecraft:block/" + top + "\",\n" +
-                "    \"side\": \"minecraft:block/" + side + "\",\n" +
+                "    \"bottom\": \"" + temp.modid + ":block/" + bottom + "\",\n" +
+                "    \"top\": \"" + temp.modid + ":block/" + top + "\",\n" +
+                "    \"side\": \"" + temp.modid + ":block/" + side + "\",\n" +
                 "    \"snowTop\": \"minecraft:block/snow\",\n" +
                 "    \"snowSide\": \"" + MODID + ":block/snow_side\"\n" +
                 "  }\n" +
@@ -125,9 +141,9 @@ public class Generator {
         String out = "{\n" +
                 "  \"parent\": \"" + MODID + ":block/snow_stair_inner\",\n" +
                 "  \"textures\": {\n" +
-                "    \"bottom\": \"minecraft:block/" + bottom + "\",\n" +
-                "    \"top\": \"minecraft:block/" + top + "\",\n" +
-                "    \"side\": \"minecraft:block/" + side + "\",\n" +
+                "    \"bottom\": \"" + temp.modid + ":block/" + bottom + "\",\n" +
+                "    \"top\": \"" + temp.modid + ":block/" + top + "\",\n" +
+                "    \"side\": \"" + temp.modid + ":block/" + side + "\",\n" +
                 "    \"snowTop\": \"minecraft:block/snow\",\n" +
                 "    \"snowSide\": \"" + MODID + ":block/snow_side\"\n" +
                 "  }\n" +
@@ -143,12 +159,42 @@ public class Generator {
         String out = "{\n" +
                 "\t\"parent\": \"" + MODID +":block/snow_stair_outer\",\n" +
                 "\t\"textures\": {\n" +
-                "\t\t\"bottom\": \"minecraft:block/" + bottom + "\",\n" +
-                "\t\t\"top\": \"minecraft:block/" + top + "\",\n" +
-                "\t\t\"side\": \"minecraft:block/" + side + "\",\n" +
+                "\t\t\"bottom\": \"" + temp.modid + ":block/" + bottom + "\",\n" +
+                "\t\t\"top\": \"" + temp.modid + ":block/" + top + "\",\n" +
+                "\t\t\"side\": \"" + temp.modid + ":block/" + side + "\",\n" +
                 "\t\t\"snowTop\": \"minecraft:block/snow\",\n" +
                 "\t\t\"snowSide\": \"" + MODID + ":block/snow_side\"\n" +
                 "\t}\n" +
+                "}";
+
+        return out;
+    }
+
+    public static String blockItemModel(String name) {
+        String out = "{\n" +
+                "  \"parent\": \"" + MODID + ":block/" + name + "\"\n" +
+                "}";
+        return out;
+    }
+
+    public static String recipe(SnowStairTemplate temp) {
+        String out = "{\n" +
+                "  \"type\": \"crafting_shaped\",\n" +
+                "  \"pattern\": [\n" +
+                "    \"A\",\n" +
+                "    \"B\"\n" +
+                "  ],\n" +
+                "  \"key\": {\n" +
+                "    \"A\": {\n" +
+                "      \"item\": \"minecraft:snow\"\n" +
+                "    },\n" +
+                "    \"B\": {\n" +
+                "      \"item\": \"" + temp.modid + ":" + temp.rawName + "\"\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"result\": {\n" +
+                "    \"item\": \"snowvariants:" + temp.name + "\"\n" +
+                "  }\n" +
                 "}";
 
         return out;
