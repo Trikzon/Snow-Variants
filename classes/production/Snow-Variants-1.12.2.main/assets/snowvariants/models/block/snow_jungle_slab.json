@@ -1,8 +1,0 @@
-{
-  "parent": "snowvariants:block/snow_slab_all",
-  "textures": {
-    "side": "blocks/planks_jungle",
-    "snowTop": "blocks/snow",
-    "snowSide": "snowvariants:blocks/snow_side"
-  }
-}
