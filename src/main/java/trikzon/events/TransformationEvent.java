@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.Half;
+import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
@@ -14,6 +15,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import trikzon.blocks.ModBlocks;
+import trikzon.blocks.SnowSlab;
 import trikzon.blocks.SnowStair;
 
 @Mod.EventBusSubscriber
@@ -61,6 +63,19 @@ public class TransformationEvent {
                         }
 
                         break;
+                    }
+                }
+            }
+
+            if (blockAtPos instanceof SlabBlock) {
+                for (SnowSlab block : ModBlocks.SNOW_SLABS) {
+                    if (blockAtPos.equals(block.origin)) {
+                        if (blockStateAtPos.get(BlockStateProperties.SLAB_TYPE).equals(SlabType.BOTTOM)) {
+                            world.setBlockState(blockPos, block.getDefaultState());
+
+                            successPos = blockPos;
+                            success = true;
+                        }
                     }
                 }
             }
