@@ -63,6 +63,14 @@ public class Generator {
                 e.printStackTrace();
             }
 
+            /**Loot Table*/
+            try (FileWriter file = new FileWriter("src/main/resources/data/snowvariants/loot_tables/blocks/" + temp.name + ".json")) {
+                file.write(lootTable(temp));
+                file.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
 
     }
@@ -195,6 +203,44 @@ public class Generator {
                 "  \"result\": {\n" +
                 "    \"item\": \"snowvariants:" + temp.name + "\"\n" +
                 "  }\n" +
+                "}";
+
+        return out;
+    }
+
+    public static String lootTable(SnowStairTemplate temp) {
+        String out = "{\n" +
+                "  \"type\": \"minecraft:block\",\n" +
+                "  \"pools\": [\n" +
+                "    {\n" +
+                "      \"rolls\": 1,\n" +
+                "      \"entries\": [\n" +
+                "        {\n" +
+                "          \"type\": \"minecraft:item\",\n" +
+                "          \"name\": \"" + temp.modid + ":" + temp.rawName + "\"\n" +
+                "        }\n" +
+                "      ],\n" +
+                "      \"conditions\": [\n" +
+                "        {\n" +
+                "          \"condition\": \"minecraft:survives_explosion\"\n" +
+                "        }\n" +
+                "      ]\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"rolls\": 1,\n" +
+                "      \"entries\": [\n" +
+                "        {\n" +
+                "          \"type\": \"minecraft:item\",\n" +
+                "          \"name\": \"minecraft:snow\"\n" +
+                "        }\n" +
+                "      ],\n" +
+                "      \"conditions\": [\n" +
+                "        {\n" +
+                "          \"condition\": \"minecraft:survives_explosion\"\n" +
+                "        }\n" +
+                "      ]\n" +
+                "    }\n" +
+                "  ]\n" +
                 "}";
 
         return out;
