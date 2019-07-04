@@ -1,0 +1,133 @@
+{
+  "__comment": "Designed by Trikzon with Cubik Studio - https://cubik.studio",
+  "parent": "block/block",
+  "textures": {
+    "particle": "#top",
+    "materialBottom": "#bottom",
+    "materialTop": "#top",
+    "materialSide": "#side",
+    "snowTop": "#snowTop",
+    "snowSide": "#snowSide"
+  },
+  "elements": [
+    {
+      "__comment": "MaterialCorner",
+      "from": [ 8, 0, 0 ],
+      "to": [ 16, 8, 16 ],
+      "faces": {
+        "down": { "uv": [ 8, 0, 16, 16 ], "texture": "#materialBottom", "cullface": "down" },
+        "north": { "uv": [ 0, 8, 8, 16 ], "texture": "#materialSide", "cullface": "north" },
+        "south": { "uv": [ 0, 8, 8, 16 ], "texture": "#materialSide", "cullface": "south" },
+        "east": { "uv": [ 0, 8, 16, 16 ], "texture": "#materialSide", "cullface": "east" }
+      }
+    },
+    {
+      "__comment": "MaterialTop",
+      "from": [ 8, 8, 0 ],
+      "to": [ 16, 16, 16 ],
+      "faces": {
+        "north": { "uv": [ 0, 0, 8, 8 ], "texture": "#materialSide", "cullface": "north" },
+        "south": { "uv": [ 8, 0, 16, 8 ], "texture": "#materialSide", "cullface": "south" },
+        "west": { "uv": [ 0, 0, 16, 8 ], "texture": "#materialSide" },
+        "east": { "uv": [ 0, 0, 16, 8 ], "texture": "#materialSide", "cullface": "east" }
+      }
+    },
+    {
+      "__comment": "MaterialBottom",
+      "from": [ 0, 0, 0 ],
+      "to": [ 8, 8, 16 ],
+      "faces": {
+        "down": { "uv": [ 0, 0, 8, 16 ], "texture": "#materialBottom" },
+        "north": { "uv": [ 8, 8, 16, 16 ], "texture": "#materialBottom" },
+        "south": { "uv": [ 0, 8, 8, 16 ], "texture": "#materialBottom" },
+        "west": { "uv": [ 0, 8, 16, 16 ], "texture": "#materialSide" }
+      }
+    },
+    {
+      "__comment": "SnowBottom",
+      "from": [ 0, 8, 0 ],
+      "to": [ 8, 10, 16 ],
+      "faces": {
+        "up": { "uv": [ 0, 0, 8, 16 ], "texture": "#snowTop" },
+        "north": { "uv": [ 8, 8, 16, 10 ], "texture": "#snowTop" },
+        "south": { "uv": [ 0, 8, 8, 10 ], "texture": "#snowTop" },
+        "west": { "uv": [ 0, 8, 16, 10 ], "texture": "#snowTop" }
+      }
+    },
+    {
+      "__comment": "SnowTop",
+      "from": [ 8, 16, 0 ],
+      "to": [ 16, 18, 16 ],
+      "faces": {
+        "up": { "uv": [ 8, 0, 16, 16 ], "texture": "#snowTop" },
+        "north": { "uv": [ 0, 0, 8, 2 ], "texture": "#snowTop" },
+        "south": { "uv": [ 8, 0, 16, 2 ], "texture": "#snowTop" },
+        "west": { "uv": [ 0, 0, 16, 2 ], "texture": "#snowTop" },
+        "east": { "uv": [ 0, 0, 16, 2 ], "texture": "#snowTop" }
+      }
+    },
+    {
+      "__comment": "SnowBottomFront",
+      "from": [ -0.05, 6, 0 ],
+      "to": [ -0.04899999, 10, 16 ],
+      "faces": {
+        "west": { "uv": [ 0, 0, 16, 4 ], "texture": "#snowSide" }
+      }
+    },
+    {
+      "__comment": "SnowBottomNorth",
+      "from": [ 0, 6, -0.05 ],
+      "to": [ 10, 10, -0.04899999 ],
+      "faces": {
+        "north": { "uv": [ 16, 0, 6, 4 ], "texture": "#snowSide" }
+      }
+    },
+    {
+      "__comment": "SnowBottomSouth",
+      "from": [ 0, 6, 16.05 ],
+      "to": [ 10, 10, 16.051 ],
+      "faces": {
+        "south": { "uv": [ 6, 0, 16, 4 ], "texture": "#snowSide" }
+      }
+    },
+    {
+      "__comment": "SnowTopFront",
+      "from": [ 7.95, 14, 0 ],
+      "to": [ 7.951, 18, 16 ],
+      "faces": {
+        "west": { "uv": [ 0, 0, 16, 4 ], "texture": "#snowSide" }
+      }
+    },
+    {
+      "__comment": "SnowTopBack",
+      "from": [ 16.05, 14, 0 ],
+      "to": [ 16.051, 18, 16 ],
+      "faces": {
+        "east": { "uv": [ 0, 0, 16, 4 ], "texture": "#snowSide" }
+      }
+    },
+    {
+      "__comment": "SnowTopNorth",
+      "from": [ 8, 14, -0.05 ],
+      "to": [ 16, 18, -0.04899999 ],
+      "faces": {
+        "north": { "uv": [ 0, 0, 8, 4 ], "texture": "#snowSide" }
+      }
+    },
+    {
+      "__comment": "SnowTopSouth",
+      "from": [ 8, 14, 16.05 ],
+      "to": [ 16, 18, 16.051 ],
+      "faces": {
+        "south": { "uv": [ 7.999999, 0, 0, 4 ], "texture": "#snowSide" }
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation":  [ 30, 135, 0 ],
+      "translation":  [ 0, -0.5, 0 ],
+      "scale":  [ 0.59, 0.59, 0.59 ]
+    }
+  }
+}
