@@ -1,0 +1,10 @@
+{
+  "parent": "snowvariants:block/snow_stair",
+  "textures": {
+    "bottom": "minecraft:block/oak_planks",
+    "top": "minecraft:block/oak_planks",
+    "side": "minecraft:block/oak_planks",
+    "snowTop": "minecraft:block/snow",
+    "snowSide": "snowvariants:block/snow_side"
+  }
+}

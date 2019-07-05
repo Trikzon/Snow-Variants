@@ -1,6 +1,7 @@
 package trikzon.snowvariants.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.util.BlockRenderLayer;
 import trikzon.snowvariants.SnowVariants;
 
 public class SnowSlab extends Block {
@@ -13,5 +14,10 @@ public class SnowSlab extends Block {
         ModBlocks.SNOW_SLABS.add(this);
 
         origin = block;
+    }
+
+    @Override
+    public BlockRenderLayer getRenderLayer() {
+        return BlockRenderLayer.CUTOUT_MIPPED;
     }
 }

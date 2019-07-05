@@ -1,0 +1,10 @@
+{
+  "parent": "snowvariants:block/snow_slab",
+  "textures": {
+    "bottom": "minecraft:block/purpur_block",
+    "top": "minecraft:block/purpur_block",
+    "side": "minecraft:block/purpur_block",
+    "snowTop": "minecraft:block/snow",
+    "snowSide": "snowvariants:block/snow_side"
+  }
+}

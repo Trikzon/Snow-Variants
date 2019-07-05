@@ -13,9 +13,73 @@ public class Generator {
 
     public static void main(String[] args) {
 
+        new SnowStairTemplate("minecraft", "purpur_stairs", "purpur_block");
+        new SnowStairTemplate("minecraft", "oak_stairs", "oak_planks");
+        new SnowStairTemplate("minecraft", "cobblestone_stairs", "cobblestone");
+        new SnowStairTemplate("minecraft", "brick_stairs", "bricks");
+        new SnowStairTemplate("minecraft", "stone_brick_stairs", "stone_bricks");
+        new SnowStairTemplate("minecraft", "nether_brick_stairs", "nether_bricks");
+        new SnowStairTemplate("minecraft", "sandstone_stairs", "sandstone_top", "sandstone", "sandstone_bottom");
         new SnowStairTemplate("minecraft", "spruce_stairs", "spruce_planks");
+        new SnowStairTemplate("minecraft", "birch_stairs", "birch_planks");
+        new SnowStairTemplate("minecraft", "jungle_stairs", "jungle_planks");
+        new SnowStairTemplate("minecraft", "quartz_stairs", "quartz_block_top", "quartz_block_side", "quartz_block_top");
+        new SnowStairTemplate("minecraft", "acacia_stairs", "acacia_planks");
+        new SnowStairTemplate("minecraft", "dark_oak_stairs", "dark_oak_planks");
+        new SnowStairTemplate("minecraft", "prismarine_stairs", "prismarine");
+        new SnowStairTemplate("minecraft", "prismarine_brick_stairs", "prismarine_bricks");
+        new SnowStairTemplate("minecraft", "dark_prismarine_stairs", "dark_prismarine");
+        new SnowStairTemplate("minecraft", "red_sandstone_stairs", "red_sandstone_top", "red_sandstone", "red_sandstone_bottom");
+        new SnowStairTemplate("minecraft", "polished_granite_stairs", "polished_granite");
+        new SnowStairTemplate("minecraft", "smooth_red_sandstone_stairs", "red_sandstone_top");
+        new SnowStairTemplate("minecraft", "mossy_stone_brick_stairs", "mossy_stone_bricks");
+        new SnowStairTemplate("minecraft", "polished_diorite_stairs", "polished_diorite");
+        new SnowStairTemplate("minecraft", "mossy_cobblestone_stairs", "mossy_cobblestone");
+        new SnowStairTemplate("minecraft", "end_stone_brick_stairs", "end_stone_bricks");
+        new SnowStairTemplate("minecraft", "stone_stairs", "stone");
+        new SnowStairTemplate("minecraft", "smooth_sandstone_stairs", "sandstone_top");
+        new SnowStairTemplate("minecraft", "smooth_quartz_stairs", "quartz_block_bottom");
+        new SnowStairTemplate("minecraft", "granite_stairs", "granite");
+        new SnowStairTemplate("minecraft", "andesite_stairs", "andesite");
+        new SnowStairTemplate("minecraft", "red_nether_brick_stairs", "red_nether_bricks");
+        new SnowStairTemplate("minecraft", "polished_andesite_stairs", "polished_andesite");
+        new SnowStairTemplate("minecraft", "diorite_stairs", "diorite");
 
+        new SnowSlabTemplate("minecraft", "oak_slab", "oak_planks");
         new SnowSlabTemplate("minecraft", "spruce_slab", "spruce_planks");
+        new SnowSlabTemplate("minecraft", "birch_slab", "birch_planks");
+        new SnowSlabTemplate("minecraft", "jungle_slab", "jungle_planks");
+        new SnowSlabTemplate("minecraft", "acacia_slab", "acacia_planks");
+        new SnowSlabTemplate("minecraft", "dark_oak_slab", "dark_oak_planks");
+        new SnowSlabTemplate("minecraft", "stone_slab", "stone");
+        new SnowSlabTemplate("minecraft", "smooth_stone_slab", "smooth_stone");
+        new SnowSlabTemplate("minecraft", "sandstone_slab", "sandstone_top", "sandstone", "sandstone_bottom");
+        new SnowSlabTemplate("minecraft", "cut_sandstone_slab", "sandstone_top", "cut_sandstone", "sandstone_top");
+        new SnowSlabTemplate("minecraft", "petrified_oak_slab", "oak_planks");
+        new SnowSlabTemplate("minecraft", "cobblestone_slab", "cobblestone");
+        new SnowSlabTemplate("minecraft", "brick_slab", "bricks");
+        new SnowSlabTemplate("minecraft", "stone_brick_slab", "stone_bricks");
+        new SnowSlabTemplate("minecraft", "nether_brick_slab", "nether_bricks");
+        new SnowSlabTemplate("minecraft", "quartz_slab", "quartz_block_top", "quartz_block_side", "quartz_block_top");
+        new SnowSlabTemplate("minecraft", "red_sandstone_slab", "red_sandstone_top", "red_sandstone", "red_sandstone_bottom");
+        new SnowSlabTemplate("minecraft", "cut_red_sandstone_slab", "red_sandstone_top", "cut_red_sandstone", "red_sandstone_top");
+        new SnowSlabTemplate("minecraft", "purpur_slab", "purpur_block");
+        new SnowSlabTemplate("minecraft", "prismarine_slab", "prismarine");
+        new SnowSlabTemplate("minecraft", "prismarine_brick_slab", "prismarine_bricks");
+        new SnowSlabTemplate("minecraft", "dark_prismarine_slab", "dark_prismarine");
+        new SnowSlabTemplate("minecraft", "polished_granite_slab", "polished_granite");
+        new SnowSlabTemplate("minecraft", "smooth_red_sandstone_slab", "red_sandstone_top");
+        new SnowSlabTemplate("minecraft", "mossy_stone_brick_slab", "mossy_stone_bricks");
+        new SnowSlabTemplate("minecraft", "polished_diorite_slab", "polished_diorite");
+        new SnowSlabTemplate("minecraft", "mossy_cobblestone_slab", "mossy_cobblestone");
+        new SnowSlabTemplate("minecraft", "end_stone_brick_slab", "end_stone_bricks");
+        new SnowSlabTemplate("minecraft", "smooth_sandstone_slab", "sandstone_top");
+        new SnowSlabTemplate("minecraft", "smooth_quartz_slab", "quartz_block_bottom");
+        new SnowSlabTemplate("minecraft", "granite_slab", "granite");
+        new SnowSlabTemplate("minecraft", "andesite_slab", "andesite");
+        new SnowSlabTemplate("minecraft", "red_nether_brick_slab", "red_nether_bricks");
+        new SnowSlabTemplate("minecraft", "polished_andesite_slab", "polished_andesite");
+        new SnowSlabTemplate("minecraft", "diorite_slab", "diorite");
 
         for (SnowStairTemplate temp : STAIRS) {
             /**Blockstate*/
@@ -74,6 +138,7 @@ public class Generator {
                 e.printStackTrace();
             }
 
+            System.out.println("Generated files for " + temp.name);
         }
 
         for (SnowSlabTemplate temp : SLABS) {
@@ -117,6 +182,8 @@ public class Generator {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            System.out.println("Generated files for " + temp.name);
         }
 
     }

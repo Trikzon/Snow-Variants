@@ -2,6 +2,7 @@ package trikzon.snowvariants.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.StairsBlock;
+import net.minecraft.util.BlockRenderLayer;
 import trikzon.snowvariants.SnowVariants;
 
 public class SnowStair extends StairsBlock {
@@ -14,5 +15,10 @@ public class SnowStair extends StairsBlock {
         ModBlocks.SNOW_STAIRS.add(this);
 
         origin = block;
+    }
+
+    @Override
+    public BlockRenderLayer getRenderLayer() {
+        return BlockRenderLayer.CUTOUT_MIPPED;
     }
 }
