@@ -245,8 +245,8 @@ public class Generator {
                 "  \"parent\": \"snowvariants:block/snow_slab\",\n" +
                 "  \"textures\": {\n" +
                 "    \"bottom\": \"" + temp.modid + ":block/" + bottom + "\",\n" +
-                "    \"top\": \"" + temp.modid + "block/" + top + "\",\n" +
-                "    \"side\": \"" + temp.modid + "block/" + side + "\",\n" +
+                "    \"top\": \"" + temp.modid + ":block/" + top + "\",\n" +
+                "    \"side\": \"" + temp.modid + ":block/" + side + "\",\n" +
                 "    \"snowTop\": \"minecraft:block/snow\",\n" +
                 "    \"snowSide\": \"snowvariants:block/snow_side\"\n" +
                 "  }\n" +
