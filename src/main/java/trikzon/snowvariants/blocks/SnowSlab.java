@@ -8,7 +8,7 @@ public class SnowSlab extends Block {
     public final Block origin;
 
     public SnowSlab(Block block) {
-        super(Block.Properties.create(block.getMaterial(block.getDefaultState())));
+        super(Block.Properties.from(block));
         setRegistryName(SnowVariants.MODID, block.getRegistryName().getNamespace() + "_" + block.getRegistryName().getPath());
         ModBlocks.SNOW_SLABS.add(this);
 
