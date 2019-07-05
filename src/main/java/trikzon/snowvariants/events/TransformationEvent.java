@@ -8,6 +8,7 @@ import net.minecraft.state.properties.Half;
 import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -29,21 +30,14 @@ public class TransformationEvent {
         if (!(event.getEntity() instanceof PlayerEntity)) return;
         PlayerEntity playerIn = event.getEntityPlayer();
 
-        System.out.println(1);
         if (!world.isRemote) {
             if (!(playerIn.getHeldItem(event.getHand()).isItemEqual(new ItemStack(Blocks.SNOW)))) return;
 
-            System.out.println(2);
             RayTraceResult rayTraceResult = rayTrace(world, playerIn);
             if (rayTraceResult == null) return;
-            System.out.println(4);
             if (rayTraceResult.getType() != RayTraceResult.Type.BLOCK) return;
-            System.out.println(5);
-            System.out.println(getDirectionFromVector(rayTraceResult.getHitVec()));
 //            if (!getDirectionFromVector(rayTraceResult.getHitVec()).equals(Direction.UP)) return;
 
-            System.out.println(3);
-            ItemStack itemInHand = playerIn.getHeldItem(event.getHand());
             BlockPos blockPos = new BlockPos(rayTraceResult.getHitVec());
             BlockState blockStateAtPos = world.getBlockState(blockPos);
             Block blockAtPos = blockStateAtPos.getBlock();
@@ -57,7 +51,12 @@ public class TransformationEvent {
                             .with(BlockStateProperties.HALF, blockStateAtPos.get(BlockStateProperties.HALF))
                             .with(BlockStateProperties.STAIRS_SHAPE, blockStateAtPos.get(BlockStateProperties.STAIRS_SHAPE)));
 
+                            if (!playerIn.isCreative())
+                                playerIn.getHeldItem(event.getHand()).shrink(1);
+
                             successPos = blockPos;
+                            playerIn.playSound(SoundEvents.BLOCK_SNOW_PLACE, (SoundType.SNOW.getVolume() + 1.0f) / 2.0f, SoundType.SNOW.getPitch() * 0.8f);
+//                            world.playSound(playerIn, blockPos, SoundType.SNOW.getPlaceSound(), SoundCategory.BLOCKS, (SoundType.SNOW.getVolume() + 1.0f) / 2.0f, SoundType.SNOW.getPitch() * 0.8f);
                             success = true;
                         }
 
@@ -72,7 +71,11 @@ public class TransformationEvent {
                         if (blockStateAtPos.get(BlockStateProperties.SLAB_TYPE).equals(SlabType.BOTTOM)) {
                             world.setBlockState(blockPos, block.getDefaultState());
 
+                            if (!playerIn.isCreative())
+                                playerIn.getHeldItem(event.getHand()).shrink(1);
+
                             successPos = blockPos;
+                            world.playSound(playerIn, blockPos, SoundType.SNOW.getPlaceSound(), SoundCategory.BLOCKS, (SoundType.SNOW.getVolume() + 1.0f) / 2.0f, SoundType.SNOW.getPitch() * 0.8f);
                             success = true;
                         }
                     }
@@ -80,9 +83,12 @@ public class TransformationEvent {
             }
         }
         if (world.isRemote && success) {
-            world.playSound(playerIn, successPos, SoundType.SNOW.getPlaceSound(), SoundCategory.BLOCKS, (SoundType.SNOW.getVolume() + 1.0f) / 2.0f, SoundType.SNOW.getPitch() * 0.8f);
+            //TODO: It doesn't play a sound
+//            world.playSound(playerIn, successPos, SoundType.SNOW.getPlaceSound(), SoundCategory.BLOCKS, (SoundType.SNOW.getVolume() + 1.0f) / 2.0f, SoundType.SNOW.getPitch() * 0.8f);
         }
+
     }
+
 
     public static RayTraceResult rayTrace (World worldIn, PlayerEntity player) {
         float f = player.rotationPitch;
