@@ -104,8 +104,4 @@ public class TransformationEvent {
         Vec3d vec3d1 = vec3d.add((double)f6 * d0, (double)f5 * d0, (double)f7 * d0);
         return worldIn.rayTraceBlocks(new RayTraceContext(vec3d, vec3d1, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.ANY, player));
     }
-
-    public static Direction getDirectionFromVector(Vec3d vec3d) {
-        return Direction.getFacingFromVector((float)vec3d.getX(), (float)vec3d.getY(), (float)vec3d.getZ());
-    }
 }
