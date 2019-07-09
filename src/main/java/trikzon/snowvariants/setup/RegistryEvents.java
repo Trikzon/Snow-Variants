@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import trikzon.snowvariants.Config;
 import trikzon.snowvariants.SnowVariants;
 import trikzon.snowvariants.blocks.ModBlocks;
 import trikzon.snowvariants.blocks.SnowSlab;
@@ -17,15 +18,28 @@ public class RegistryEvents {
 
     @SubscribeEvent
     public static void onBlockRegistry(final RegistryEvent.Register<Block> event) {
-        registerMinecraftBlocks();
+        if (Config.MOD_MINECRAFT_STAIRS.get()) {
+            if (Config.MOD_MINECRAFT_STAIRS.get())
+                registerMinecraftStairs();
+        }
 
-        for (Block block : ModBlocks.SNOW_STAIRS)
-            event.getRegistry().register(block);
-        for (Block block : ModBlocks.SNOW_SLABS)
-            event.getRegistry().register(block);
+        if (Config.MOD_MINECRAFT_SLABS.get()) {
+            if (Config.MOD_MINECRAFT_SLABS.get())
+                registerMinecraftSlabs();
+        }
+
+
+        if (Config.GENERAL_REGISTER_STAIRS.get()) {
+            for (Block block : ModBlocks.SNOW_STAIRS)
+                event.getRegistry().register(block);
+        }
+        if (Config.GENERAL_REGISTER_SLABS.get()) {
+            for (Block block : ModBlocks.SNOW_SLABS)
+                event.getRegistry().register(block);
+        }
     }
 
-    public static void registerMinecraftBlocks() {
+    public static void registerMinecraftStairs() {
         new SnowStair(Blocks.PURPUR_STAIRS);
         new SnowStair(Blocks.OAK_STAIRS);
         new SnowStair(Blocks.COBBLESTONE_STAIRS);
@@ -57,7 +71,9 @@ public class RegistryEvents {
         new SnowStair(Blocks.RED_NETHER_BRICK_STAIRS);
         new SnowStair(Blocks.POLISHED_ANDESITE_STAIRS);
         new SnowStair(Blocks.DIORITE_STAIRS);
+    }
 
+    public static void registerMinecraftSlabs() {
         new SnowSlab(Blocks.OAK_SLAB);
         new SnowSlab(Blocks.SPRUCE_SLAB);
         new SnowSlab(Blocks.BIRCH_SLAB);
@@ -98,9 +114,13 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void onItemRegistry(final RegistryEvent.Register<Item> event){
 
-        for (Block block : ModBlocks.SNOW_STAIRS)
-            event.getRegistry().register(new BlockItem(block, new Item.Properties().group(SnowVariants.itemGroup)).setRegistryName(block.getRegistryName()));
-        for (Block block : ModBlocks.SNOW_SLABS)
-            event.getRegistry().register(new BlockItem(block, new Item.Properties().group(SnowVariants.itemGroup)).setRegistryName(block.getRegistryName()));
+        if (Config.GENERAL_REGISTER_ITEMS.get()) {
+            if (Config.GENERAL_REGISTER_STAIRS.get())
+                for (Block block : ModBlocks.SNOW_STAIRS)
+                    event.getRegistry().register(new BlockItem(block, new Item.Properties().group(SnowVariants.itemGroup)).setRegistryName(block.getRegistryName()));
+            if (Config.GENERAL_REGISTER_SLABS.get())
+                for (Block block : ModBlocks.SNOW_SLABS)
+                    event.getRegistry().register(new BlockItem(block, new Item.Properties().group(SnowVariants.itemGroup)).setRegistryName(block.getRegistryName()));
+        }
     }
 }

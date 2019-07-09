@@ -13,48 +13,49 @@ import java.nio.file.Path;
 public class Config {
 
     public static final String CATEGORY_GENERAL = "general";
-    public static final String CATEGORY_POWER = "power";
-    public static final String SUBCATEGORY_FIRSTBLOCK = "firstblock";
+    public static final String CATEGORY_MOD = "mod";
 
     private static final ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
-    private static final ForgeConfigSpec.Builder CLIENT_BUILDER = new ForgeConfigSpec.Builder();
 
     public static ForgeConfigSpec COMMON_CONFIG;
-    public static ForgeConfigSpec CLIENT_CONFIG;
 
-    public static ForgeConfigSpec.IntValue FIRSTBLOCK_MAXPOWER;
-    public static ForgeConfigSpec.IntValue FIRSTBLOCK_GENERATE;
-    public static ForgeConfigSpec.IntValue FIRSTBLOCK_SEND;
-    public static ForgeConfigSpec.IntValue FIRSTBLOCK_TICKS;
+    public static ForgeConfigSpec.BooleanValue GENERAL_REGISTER_ITEMS;
+    public static ForgeConfigSpec.BooleanValue GENERAL_REGISTER_STAIRS;
+    public static ForgeConfigSpec.BooleanValue GENERAL_REGISTER_SLABS;
+
+    public static final String SUBCATEGORY_MOD_MINECRAFT = "minecraft";
+    public static ForgeConfigSpec.BooleanValue MOD_MINECRAFT_STAIRS;
+    public static ForgeConfigSpec.BooleanValue MOD_MINECRAFT_SLABS;
 
     static {
 
         COMMON_BUILDER.comment("General Settings").push(CATEGORY_GENERAL);
+        setupGeneralConfig();
         COMMON_BUILDER.pop();
 
-        COMMON_BUILDER.comment("Power Settings").push(CATEGORY_POWER);
-
-        setupFirstBlockConfig();
-
+        COMMON_BUILDER.comment("Mod Specific Settings. False Overrides General Values").push(CATEGORY_MOD);
+        setupModConfig();
         COMMON_BUILDER.pop();
 
         COMMON_CONFIG = COMMON_BUILDER.build();
-        CLIENT_CONFIG = CLIENT_BUILDER.build();
     }
 
-    private static void setupFirstBlockConfig() {
-        COMMON_BUILDER.comment("First Block Settings").push(SUBCATEGORY_FIRSTBLOCK);
+    private static void setupGeneralConfig() {
+        GENERAL_REGISTER_ITEMS = COMMON_BUILDER.comment("Register ItemBlocks Of Snow Variants. False Overrides Mod Specific Values")
+                .define("registerItems", true);
+        GENERAL_REGISTER_STAIRS = COMMON_BUILDER.comment("Register Snow Stair Variants. False Overrides Mod Specific Values")
+                .define("registerStairs", true);
+        GENERAL_REGISTER_SLABS = COMMON_BUILDER.comment("Register Snow Slab Variants. False Overrides Mod Specific Values")
+                .define("registerSlabs", true);
+    }
 
-        FIRSTBLOCK_MAXPOWER = COMMON_BUILDER.comment("Maximum power for the `First Block` generator")
-                .defineInRange("maxPower", 100000, 0, Integer.MAX_VALUE);
-        FIRSTBLOCK_GENERATE = COMMON_BUILDER.comment("Power generated per red dye")
-                .defineInRange("generate", 1000, 0, Integer.MAX_VALUE);
-        FIRSTBLOCK_SEND = COMMON_BUILDER.comment("Power to send each tick")
-                .defineInRange("send", 100, 0, Integer.MAX_VALUE);
-        FIRSTBLOCK_TICKS = COMMON_BUILDER.comment("Ticks to consume each red dye")
-                .defineInRange("ticks", 20, 0, Integer.MAX_VALUE);
+    private static void setupModConfig() {
+        COMMON_BUILDER.comment("Minecraft Settings").push(SUBCATEGORY_MOD_MINECRAFT);
+        MOD_MINECRAFT_STAIRS = COMMON_BUILDER.comment("Register All Snow Minecraft Stair Variants")
+                .define("registerMinecraftStairs", true);
+        MOD_MINECRAFT_SLABS = COMMON_BUILDER.comment("Register All Snow Minecraft Slab Variants")
+                .define("registerMinecraftSlabs", true);
 
-        COMMON_BUILDER.pop();
     }
 
     public static void loadConfig(ForgeConfigSpec spec, Path path) {
