@@ -1,0 +1,16 @@
+[
+{
+  "modid": "snowvariants",
+  "name": "Snow Variants",
+  "description": "My Submission for 2018 MMD Winter Jam",
+  "version": "1.0.1",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Trikzon"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

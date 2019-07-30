@@ -1,0 +1,18 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:snow"
+    },
+    "B": {
+      "item": "minecraft:granite_slab"
+    }
+  },
+  "result": {
+    "item": "snowvariants:minecraft_granite_slab"
+  }
+}
