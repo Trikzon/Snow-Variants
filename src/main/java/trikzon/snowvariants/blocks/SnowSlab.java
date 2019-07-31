@@ -32,6 +32,8 @@ public class SnowSlab extends Block {
         setRegistryName(SnowVariants.MODID, origin.getRegistryName().getResourceDomain() + "_" + origin.getRegistryName().getResourcePath());
         setUnlocalizedName(SnowVariants.MODID + "." + getRegistryName().getResourcePath());
         setCreativeTab(SnowVariants.itemGroup);
+        setHardness(origin.getBlockHardness(null, null, null));
+        setResistance(origin.getExplosionResistance(null, null, null, null));
 
         ModBlocks.SNOW_SLABS.add(this);
     }
@@ -49,6 +51,9 @@ public class SnowSlab extends Block {
         setRegistryName(SnowVariants.MODID, name);
         setUnlocalizedName(SnowVariants.MODID + "." + getRegistryName().getResourcePath());
         setCreativeTab(SnowVariants.itemGroup);
+        setHardness(origin.getBlockHardness(null, null, null));
+        setResistance(origin.getExplosionResistance(null, null, null, null));
+        setSoundType(origin.getSoundType());
 
         ModBlocks.SNOW_SLABS.add(this);
     }
@@ -84,6 +89,12 @@ public class SnowSlab extends Block {
     }
 
     @Override
+    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+        drops.add(new ItemStack(origin, 1, originMeta));
+        drops.add(new ItemStack(Blocks.SNOW_LAYER));
+    }
+
+    @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         if (playerIn.getHeldItem(hand).getItem() instanceof ItemSpade) {
 
@@ -91,10 +102,10 @@ public class SnowSlab extends Block {
             if (!(origin instanceof BlockSlab)) return false;
             // If world is server
             if (!worldIn.isRemote) {
-                worldIn.setBlockState(pos, origin.getDefaultState().withProperty(BlockSlab.HALF, BlockSlab.EnumBlockHalf.BOTTOM));
+                worldIn.setBlockState(pos, origin.getStateFromMeta(originMeta));
                 if (!playerIn.isCreative()) {
                     worldIn.spawnEntity(new EntityItem(worldIn, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, new ItemStack(Blocks.SNOW_LAYER)));
-                    playerIn.getHeldItem(hand).setItemDamage(playerIn.getHeldItem(hand).getItemDamage() - 1);
+                    playerIn.getHeldItem(hand).damageItem(1, playerIn);
                 }
             // If world is client
             } else {

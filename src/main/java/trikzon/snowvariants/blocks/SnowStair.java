@@ -10,6 +10,7 @@ import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import trikzon.snowvariants.SnowVariants;
 
@@ -47,6 +48,12 @@ public class SnowStair extends BlockStairs {
     @Override
     public BlockRenderLayer getBlockLayer() {
         return BlockRenderLayer.CUTOUT;
+    }
+
+    @Override
+    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+        drops.add(new ItemStack(origin));
+        drops.add(new ItemStack(Blocks.SNOW_LAYER));
     }
 
     @Override
