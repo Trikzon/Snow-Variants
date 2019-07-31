@@ -20,34 +20,34 @@ import trikzon.snowvariants.SnowVariants;
 public class SnowSlab extends Block {
 
     public final Block origin;
-    public final int meta;
+    public final int originMeta;
 
     protected static final AxisAlignedBB AABB_BOTTOM_HALF = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D);
 
-    public SnowSlab(Block origin, int meta) {
+    public SnowSlab(Block origin, int originMeta) {
         super(origin.getMaterial(origin.getDefaultState()));
         this.origin = origin;
-        this.meta = meta;
+        this.originMeta = originMeta;
 
         setRegistryName(SnowVariants.MODID, origin.getRegistryName().getResourceDomain() + "_" + origin.getRegistryName().getResourcePath());
-        setUnlocalizedName(SnowVariants.MODID + "." + getRegistryName());
+        setUnlocalizedName(SnowVariants.MODID + "." + getRegistryName().getResourcePath());
         setCreativeTab(SnowVariants.itemGroup);
 
         ModBlocks.SNOW_SLABS.add(this);
     }
 
     /**
-     * Used to manually insert old names from version 1.12.2-1.2.3 and less
+     * Used to manually insert old names from version 1.12.2-1.2.3 and less to keep compatibility
      * @param origin
      * @param name
      */
-    public SnowSlab(Block origin, int meta, String name) {
+    public SnowSlab(Block origin, int originMeta, String name) {
         super(origin.getMaterial(origin.getDefaultState()));
         this.origin = origin;
-        this.meta = meta;
+        this.originMeta = originMeta;
 
         setRegistryName(SnowVariants.MODID, name);
-        setUnlocalizedName(SnowVariants.MODID + "." + getRegistryName());
+        setUnlocalizedName(SnowVariants.MODID + "." + getRegistryName().getResourcePath());
         setCreativeTab(SnowVariants.itemGroup);
 
         ModBlocks.SNOW_SLABS.add(this);
@@ -70,7 +70,7 @@ public class SnowSlab extends Block {
 
     @Override
     public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.CUTOUT_MIPPED;
+        return BlockRenderLayer.CUTOUT;
     }
 
     @Override

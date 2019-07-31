@@ -22,18 +22,23 @@ public class SnowStair extends BlockStairs {
         this.origin = origin;
 
         setRegistryName(SnowVariants.MODID, origin.getRegistryName().getResourceDomain() + "_" + origin.getRegistryName().getResourcePath());
-        setUnlocalizedName(SnowVariants.MODID + "." + getRegistryName());
+        setUnlocalizedName(SnowVariants.MODID + "." + getRegistryName().getResourcePath());
         setCreativeTab(SnowVariants.itemGroup);
 
         ModBlocks.SNOW_STAIRS.add(this);
     }
 
+    /**
+     * Used to manually insert old names from version 1.12.2-1.2.3 and less to keep compatibility
+     * @param origin
+     * @param name
+     */
     public SnowStair(Block origin, String name) {
         super(origin.getDefaultState());
         this.origin = origin;
 
         setRegistryName(SnowVariants.MODID, name);
-        setUnlocalizedName(SnowVariants.MODID + "." + getRegistryName());
+        setUnlocalizedName(SnowVariants.MODID + "." + getRegistryName().getResourcePath());
         setCreativeTab(SnowVariants.itemGroup);
 
         ModBlocks.SNOW_STAIRS.add(this);
@@ -41,7 +46,7 @@ public class SnowStair extends BlockStairs {
 
     @Override
     public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.CUTOUT_MIPPED;
+        return BlockRenderLayer.CUTOUT;
     }
 
     @Override

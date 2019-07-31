@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:snow_layer"
+    },
+    "B": {
+      "item": "minecraft:quartz_stairs"
+    }
+  },
+  "result": {
+    "item": "snowvariants:snow_quartz_stairs"
+  }
+}

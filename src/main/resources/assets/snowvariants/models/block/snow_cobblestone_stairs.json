@@ -1,0 +1,7 @@
+{
+  "parent": "snowvariants:block/snow_stair",
+  "textures": {
+    "bottom": "minecraft:blocks/cobblestone",
+    "side": "minecraft:blocks/cobblestone"
+  }
+}

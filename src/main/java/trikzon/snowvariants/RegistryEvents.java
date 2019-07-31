@@ -1,12 +1,17 @@
 package trikzon.snowvariants;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import trikzon.snowvariants.blocks.ModBlocks;
 import trikzon.snowvariants.blocks.SnowSlab;
 import trikzon.snowvariants.blocks.SnowStair;
@@ -82,6 +87,17 @@ public class RegistryEvents {
             if (ModConfig.generalCat.registerSlabs)
                 for (Block block : ModBlocks.SNOW_SLABS)
                     event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+        }
+    }
+
+    @SideOnly(Side.CLIENT)
+    @SubscribeEvent
+    public static void registerModels(ModelRegistryEvent event) {
+        for (SnowStair stair : ModBlocks.SNOW_STAIRS) {
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(stair), 0, new ModelResourceLocation(stair.getRegistryName(), "inventory"));
+        }
+        for (SnowSlab slab : ModBlocks.SNOW_SLABS) {
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(slab), 0, new ModelResourceLocation(slab.getRegistryName(), "inventory"));
         }
     }
 }

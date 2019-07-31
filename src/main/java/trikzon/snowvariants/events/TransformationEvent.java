@@ -58,7 +58,7 @@ public class TransformationEvent {
                 }
             } else if (block instanceof BlockSlab) {
                 for (SnowSlab slab : ModBlocks.SNOW_SLABS) {
-                    IBlockState originBlockState = slab.origin.getStateFromMeta(slab.meta);
+                    IBlockState originBlockState = slab.origin.getStateFromMeta(slab.originMeta);
                     if (blockState == originBlockState) {
                         if (blockState.getValue(BlockSlab.HALF) == BlockSlab.EnumBlockHalf.BOTTOM) {
                             event.getWorld().setBlockState(event.getPos(), slab.getDefaultState());

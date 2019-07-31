@@ -1,0 +1,7 @@
+{
+	"parent": "snowvariants:block/snow_stair_outer",
+	"textures": {
+		"bottom": "minecraft:blocks/nether_brick",
+		"side": "minecraft:blocks/nether_brick"
+	}
+}

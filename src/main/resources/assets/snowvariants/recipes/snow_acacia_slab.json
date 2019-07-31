@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:snow_layer"
+    },
+    "B": {
+      "item": "minecraft:wooden_slab",
+      "data": 4
+    }
+  },
+  "result": {
+    "item": "snowvariants:snow_acacia_slab"
+  }
+}

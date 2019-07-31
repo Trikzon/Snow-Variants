@@ -1,0 +1,7 @@
+{
+  "parent": "snowvariants:block/snow_slab",
+  "textures": {
+    "bottom": "minecraft:blocks/quartz_block_top",
+    "side": "minecraft:blocks/quartz_block_side"
+  }
+}
