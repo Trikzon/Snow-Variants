@@ -21,7 +21,7 @@ public class RightClickEvent {
     @SubscribeEvent()
     public static void onBlockRightClicked(PlayerInteractEvent.RightClickBlock event) {
         // Debug Mode:
-        if (true) {
+        if (false) {
             if (!event.getWorld().isRemote) {
                 IBlockState state = event.getWorld().getBlockState(event.getPos());
                 Block block = state.getBlock();
@@ -36,7 +36,7 @@ public class RightClickEvent {
 
         if (item.isItemEqual(new ItemStack(Blocks.SNOW_LAYER))) {
 
-            if (event.getFace() != EnumFacing.UP) return;
+            if (event.getFace() == EnumFacing.DOWN) return;
 
             IBlockState blockState = event.getWorld().getBlockState(event.getPos());
             Block block = blockState.getBlock();
