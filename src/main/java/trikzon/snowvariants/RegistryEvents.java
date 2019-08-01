@@ -5,9 +5,11 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -15,6 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import trikzon.snowvariants.blocks.ModBlocks;
 import trikzon.snowvariants.blocks.SnowSlab;
 import trikzon.snowvariants.blocks.SnowStair;
+import trikzon.snowvariants.compat.AppliedEnergistics2;
 
 @Mod.EventBusSubscriber(modid = SnowVariants.MODID)
 public class RegistryEvents {
@@ -24,11 +27,19 @@ public class RegistryEvents {
         if (ModConfig.generalCat.registerStairs) {
             if (ModConfig.modCat.minecraftSub.registerMinecraftStairs)
                 registerMinecraftStairs();
+
+            AppliedEnergistics2 ae2 = new AppliedEnergistics2();
+            if (ModConfig.modCat.ae2Sub.registerAE2Stairs && Loader.isModLoaded(ae2.MODID))
+                ae2.registerStairs();
         }
 
         if (ModConfig.generalCat.registerSlabs) {
             if (ModConfig.modCat.minecraftSub.registerMinecraftSlabs)
                 registerMinecraftSlabs();
+
+            AppliedEnergistics2 ae2 = new AppliedEnergistics2();
+            if (ModConfig.modCat.ae2Sub.RegisterAE2Slabs && Loader.isModLoaded(ae2.MODID))
+                ae2.registerSlabs();
         }
 
 
@@ -79,7 +90,6 @@ public class RegistryEvents {
 
     @SubscribeEvent
     public static void onItemRegistry(final RegistryEvent.Register<Item> event){
-
         if (ModConfig.generalCat.registerItems) {
             if (ModConfig.generalCat.registerStairs)
                 for (Block block : ModBlocks.SNOW_STAIRS)

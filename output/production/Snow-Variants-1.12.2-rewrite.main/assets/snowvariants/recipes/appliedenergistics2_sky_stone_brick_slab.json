@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:snow_layer"
+    },
+    "B": {
+      "item": "appliedenergistics2:sky_stone_brick_slab",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "snowvariants:appliedenergistics2_sky_stone_brick_slab"
+  }
+}

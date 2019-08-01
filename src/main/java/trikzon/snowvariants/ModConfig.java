@@ -21,6 +21,7 @@ public class ModConfig {
     }
 
     @Config.Name("Mod Specific Category")
+    @Config.Comment("True Requires Mod Is Installed")
     public static ModCategory modCat = new ModCategory();
     public static class ModCategory {
 
@@ -29,12 +30,23 @@ public class ModConfig {
         public static class MinecraftSubCategory {
 
             @Config.RequiresMcRestart
-            @Config.Comment("Register All Snow Minecraft Slab Variants.")
+            @Config.Comment("Register All Snow Minecraft Stair Variants.")
             public boolean registerMinecraftStairs = true;
             @Config.RequiresMcRestart
-            @Config.Comment("Register All Snow Minecraft Stair Variants.")
+            @Config.Comment("Register All Snow Minecraft Slab Variants.")
             public boolean registerMinecraftSlabs = true;
+        }
 
+        @Config.Name("Applied Energistics 2 Sub Category")
+        public AE2SubCategory ae2Sub = new AE2SubCategory();
+        public static class AE2SubCategory {
+
+            @Config.RequiresMcRestart
+            @Config.Comment("Register All Snow AE2 Stair Variants.")
+            public boolean registerAE2Stairs = true;
+            @Config.RequiresMcRestart
+            @Config.Comment("Register All Snow AE2 Slab Variants")
+            public boolean RegisterAE2Slabs = true;
         }
     }
 }

@@ -26,6 +26,7 @@ public class RightClickEvent {
                 IBlockState state = event.getWorld().getBlockState(event.getPos());
                 Block block = state.getBlock();
                 System.out.println(block.getMetaFromState(state));
+                System.out.println(block.getRegistryName());
             }
         }
 

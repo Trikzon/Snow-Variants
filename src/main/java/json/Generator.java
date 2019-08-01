@@ -42,6 +42,24 @@ public class Generator {
         new SnowSlabTemplate("minecraft", "snow_red_sandstone_slab", "red_sandstone_normal", "red_sandstone_bottom", 0, "stone_slab2");
         new SnowSlabTemplate("minecraft", "snow_purpur_slab", "purpur_block", 0, "purpur_slab", 1);
 
+        new SnowStairTemplate("appliedenergistics2", "sky_stone_stairs", "sky_stone_block");
+        new SnowStairTemplate("appliedenergistics2", "smooth_sky_stone_stairs", "smooth_sky_stone_block");
+        new SnowStairTemplate("appliedenergistics2", "sky_stone_brick_stairs", "sky_stone_brick");
+        new SnowStairTemplate("appliedenergistics2", "sky_stone_small_brick_stairs", "sky_stone_small_brick");
+        new SnowStairTemplate("appliedenergistics2", "fluix_stairs", "fluix_block");
+        new SnowStairTemplate("appliedenergistics2", "quartz_stairs", "quartz_block");
+        new SnowStairTemplate("appliedenergistics2", "chiseled_quartz_stairs", "chiseled_quartz_block_side", "chiseled_quartz_block_top");
+        new SnowStairTemplate("appliedenergistics2", "quartz_pillar_stairs", "quartz_pillar_side", "quartz_pillar_top");
+
+        new SnowSlabTemplate("appliedenergistics2", "sky_stone_slab", "sky_stone_block", 0);
+        new SnowSlabTemplate("appliedenergistics2", "smooth_sky_stone_slab", "smooth_sky_stone_block", 0);
+        new SnowSlabTemplate("appliedenergistics2", "sky_stone_brick_slab", "sky_stone_brick", 0);
+        new SnowSlabTemplate("appliedenergistics2", "sky_stone_small_brick_slab", "sky_stone_small_brick", 0);
+        new SnowSlabTemplate("appliedenergistics2", "fluix_slab", "fluix_block", 0);
+        new SnowSlabTemplate("appliedenergistics2", "quartz_slab", "quartz_block", 0);
+        new SnowSlabTemplate("appliedenergistics2", "chiseled_quartz_slab", "chiseled_quartz_block_side", "chiseled_quartz_block_top", 0);
+        new SnowSlabTemplate("appliedenergistics2", "quartz_pillar_slab", "quartz_pillar_side", "quartz_pillar_top", 0);
+
         for (SnowStairTemplate temp : STAIRS) {
             /**Blockstate*/
             try (FileWriter file = new FileWriter("src/main/resources/assets/snowvariants/blockstates/" + temp.name + ".json")) {
@@ -241,8 +259,8 @@ public class Generator {
         String out = "{\n" +
                 "  \"parent\": \"snowvariants:block/snow_slab\",\n" +
                 "  \"textures\": {\n" +
-                "    \"bottom\": \"minecraft:blocks/" + bottom + "\",\n" +
-                "    \"side\": \"minecraft:blocks/" + side + "\"\n" +
+                "    \"bottom\": \"" + temp.modid + ":blocks/" + bottom + "\",\n" +
+                "    \"side\": \"" + temp.modid + ":blocks/" + side + "\"\n" +
                 "  }\n" +
                 "}";
 

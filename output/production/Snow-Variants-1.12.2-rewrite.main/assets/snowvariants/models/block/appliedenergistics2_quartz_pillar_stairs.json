@@ -1,0 +1,7 @@
+{
+  "parent": "snowvariants:block/snow_stair",
+  "textures": {
+    "bottom": "appliedenergistics2:blocks/quartz_pillar_top",
+    "side": "appliedenergistics2:blocks/quartz_pillar_side"
+  }
+}
