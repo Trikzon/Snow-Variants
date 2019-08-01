@@ -16,7 +16,7 @@ import trikzon.snowvariants.blocks.SnowSlab;
 import trikzon.snowvariants.blocks.SnowStair;
 
 @Mod.EventBusSubscriber
-public class TransformationEvent {
+public class RightClickEvent {
 
     @SubscribeEvent()
     public static void onBlockRightClicked(PlayerInteractEvent.RightClickBlock event) {
