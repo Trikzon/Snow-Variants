@@ -22,7 +22,7 @@ import java.util.Random;
 @Mod.EventBusSubscriber
 public class SnowEvent {
 
-    private final static int NUM_TICKS = 10;
+    private final static int NUM_TICKS = 40;
     private final static Random random = new Random();
 
     @SubscribeEvent
@@ -39,7 +39,7 @@ public class SnowEvent {
                     final BlockPos pos = world.getHeight(chunk.getPos().getBlock(x, 0, z)).down();
                     final IBlockState state = world.getBlockState(pos);
 
-                    if (canSnowAt(pos, world) && random.nextInt(16) == 0) {
+                    if (canSnowAt(pos, world) && random.nextInt(24) == 0) {
                         final Block block = state.getBlock();
 
                         if (block instanceof BlockStairs) {
