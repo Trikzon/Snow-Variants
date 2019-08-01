@@ -1,7 +1,0 @@
-{
-  "parent": "snowvariants:block/snow_stair",
-  "textures": {
-    "bottom": "minecraft:blocks/sandstone_bottom",
-    "side": "minecraft:blocks/sandstone_normal"
-  }
-}

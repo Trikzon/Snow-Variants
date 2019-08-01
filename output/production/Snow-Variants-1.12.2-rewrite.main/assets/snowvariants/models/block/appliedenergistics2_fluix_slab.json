@@ -1,7 +1,0 @@
-{
-  "parent": "snowvariants:block/snow_slab",
-  "textures": {
-    "bottom": "appliedenergistics2:blocks/fluix_block",
-    "side": "appliedenergistics2:blocks/fluix_block"
-  }
-}
