@@ -31,10 +31,10 @@ public class ModConfig {
 
             @Config.RequiresMcRestart
             @Config.Comment("Register All Snow Minecraft Stair Variants.")
-            public boolean registerMinecraftStairs = true;
+            public boolean registerStairs = true;
             @Config.RequiresMcRestart
             @Config.Comment("Register All Snow Minecraft Slab Variants.")
-            public boolean registerMinecraftSlabs = true;
+            public boolean registerSlabs = true;
         }
 
         @Config.Name("Applied Energistics 2 Sub Category")
@@ -43,10 +43,21 @@ public class ModConfig {
 
             @Config.RequiresMcRestart
             @Config.Comment("Register All Snow AE2 Stair Variants.")
-            public boolean registerAE2Stairs = true;
+            public boolean registerStairs = true;
             @Config.RequiresMcRestart
             @Config.Comment("Register All Snow AE2 Slab Variants")
-            public boolean RegisterAE2Slabs = true;
+            public boolean RegisterSlabs = true;
+        }
+
+        @Config.Name("Astral Sorcery Sub Category")
+        public AstralSorcerySubCategory astralSub = new AstralSorcerySubCategory();
+        public static class AstralSorcerySubCategory {
+            @Config.RequiresMcRestart
+            @Config.Comment("Register All Snow Astral Sorcery Stair Variants.")
+            public boolean registerStairs = true;
+            @Config.RequiresMcRestart
+            @Config.Comment("Register All Snow Astral Sorcery Slab Variants")
+            public boolean RegisterSlabs = true;
         }
     }
 }

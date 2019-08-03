@@ -7,7 +7,7 @@ import trikzon.snowvariants.SnowVariants;
 import trikzon.snowvariants.blocks.SnowSlab;
 import trikzon.snowvariants.blocks.SnowStair;
 
-public class Mod {
+public abstract class Mod {
 
     public final String MODID;
 
@@ -40,4 +40,7 @@ public class Mod {
     public void createSlab(String registryName) {
         createSlab(registryName, 0);
     }
+
+    public abstract void registerSlabs();
+    public abstract void registerStairs();
 }

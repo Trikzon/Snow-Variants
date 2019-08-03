@@ -6,6 +6,7 @@ public class AppliedEnergistics2 extends Mod{
         super("appliedenergistics2");
     }
 
+    @Override
     public void registerStairs() {
         createStair("sky_stone_stairs");
         createStair("smooth_sky_stone_stairs");
@@ -17,6 +18,7 @@ public class AppliedEnergistics2 extends Mod{
         createStair("quartz_pillar_stairs");
     }
 
+    @Override
     public void registerSlabs() {
         createSlab("sky_stone_slab");
         createSlab("smooth_sky_stone_slab");

@@ -18,6 +18,7 @@ import trikzon.snowvariants.blocks.ModBlocks;
 import trikzon.snowvariants.blocks.SnowSlab;
 import trikzon.snowvariants.blocks.SnowStair;
 import trikzon.snowvariants.compat.AppliedEnergistics2;
+import trikzon.snowvariants.compat.AstralSorcery;
 
 @Mod.EventBusSubscriber(modid = SnowVariants.MODID)
 public class RegistryEvents {
@@ -25,21 +26,29 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void onBlockRegistry(final RegistryEvent.Register<Block> event) {
         if (ModConfig.generalCat.registerStairs) {
-            if (ModConfig.modCat.minecraftSub.registerMinecraftStairs)
+            if (ModConfig.modCat.minecraftSub.registerStairs)
                 registerMinecraftStairs();
 
             AppliedEnergistics2 ae2 = new AppliedEnergistics2();
-            if (ModConfig.modCat.ae2Sub.registerAE2Stairs && Loader.isModLoaded(ae2.MODID))
+            if (ModConfig.modCat.ae2Sub.registerStairs && Loader.isModLoaded(ae2.MODID))
                 ae2.registerStairs();
+
+            AstralSorcery astral = new AstralSorcery();
+//            if (ModConfig.modCat.astralSub.registerStairs && Loader.isModLoaded(astral.MODID))
+//                astral.registerStairs();
         }
 
         if (ModConfig.generalCat.registerSlabs) {
-            if (ModConfig.modCat.minecraftSub.registerMinecraftSlabs)
+            if (ModConfig.modCat.minecraftSub.registerSlabs)
                 registerMinecraftSlabs();
 
             AppliedEnergistics2 ae2 = new AppliedEnergistics2();
-            if (ModConfig.modCat.ae2Sub.RegisterAE2Slabs && Loader.isModLoaded(ae2.MODID))
+            if (ModConfig.modCat.ae2Sub.RegisterSlabs && Loader.isModLoaded(ae2.MODID))
                 ae2.registerSlabs();
+
+            AstralSorcery astral = new AstralSorcery();
+//            if (ModConfig.modCat.astralSub.RegisterSlabs && Loader.isModLoaded(astral.MODID))
+//                astral.registerSlabs();
         }
 
 
@@ -98,6 +107,9 @@ public class RegistryEvents {
                 for (Block block : ModBlocks.SNOW_SLABS)
                     event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
         }
+
+        Block block = Block.REGISTRY.getObject(new ResourceLocation("astralsorcery:blockmarblestairs"));
+        SnowVariants.LOGGER.debug(block);
     }
 
     @SideOnly(Side.CLIENT)

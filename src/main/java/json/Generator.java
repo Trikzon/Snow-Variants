@@ -60,6 +60,9 @@ public class Generator {
         new SnowSlabTemplate("appliedenergistics2", "chiseled_quartz_slab", "chiseled_quartz_block_side", "chiseled_quartz_block_top", 0);
         new SnowSlabTemplate("appliedenergistics2", "quartz_pillar_slab", "quartz_pillar_side", "quartz_pillar_top", 0);
 
+        new SnowStairTemplate("astralsorcery", "blockmarblestairs", "marble_bricks");
+        new SnowSlabTemplate("astralsorcery", "blockmarbleslab", "marble_bricks", 0);
+
         for (SnowStairTemplate temp : STAIRS) {
             /**Blockstate*/
             try (FileWriter file = new FileWriter("src/main/resources/assets/snowvariants/blockstates/" + temp.name + ".json")) {

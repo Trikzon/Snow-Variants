@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:snow_layer"
+    },
+    "B": {
+      "item": "astralsorcery:blockmarbleslab",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "snowvariants:astralsorcery_blockmarbleslab"
+  }
+}
