@@ -1,106 +1,75 @@
-//package trikzon.snowvariants.events;
-//
-//import net.minecraft.block.BlockState;
-//import net.minecraft.util.math.BlockPos;
-//import net.minecraft.world.ServerWorld;
-//import net.minecraft.world.biome.Biome;
-//import net.minecraft.world.chunk.Chunk;
-//import net.minecraftforge.eventbus.api.SubscribeEvent;
-//import net.minecraftforge.fml.LogicalSide;
-//import net.minecraftforge.fml.common.Mod;
-//import net.minecraftforge.fml.common.gameevent.TickEvent;
-//import trikzon.snowvariants.blocks.ModBlocks;
-//import trikzon.snowvariants.blocks.SnowSlab;
-//
-//import java.util.Iterator;
-//import java.util.Random;
-//
-//@Mod.EventBusSubscriber
-//public class SnowEvent {
-//
-//    private final static int NUM_TICKS = 40;
-//    private final static Random random = new Random();
-//
-//    @SubscribeEvent
-//    public static void onWorldTick(TickEvent.WorldTickEvent event) {
-//        if (event.side == LogicalSide.CLIENT) return;
-//        final ServerWorld world = (ServerWorld) event.world;
-//        if (event.phase != TickEvent.Phase.END || world.getGameTime() % NUM_TICKS != 0 || !world.isRaining()) return;
-//
-//        world.getChunkProvider().getLoadedChunkCount()
-//        for (Iterator<Chunk> iterator = world.getPersistentChunkIterable(world.getPlayerChunkMap().getChunkIterator()); iterator.hasNext();) {
-//            final Chunk chunk = iterator.next();
-//
-//            for (int x  = 0; x < 16; x++) {
-//                for (int z = 0; z < 16; z++) {
-//                    final BlockPos pos = world.getHeight(chunk.getPos().getBlock(x, 0, z));
-//                    final BlockPos posDown = world.getHeight(chunk.getPos().getBlock(x, 0, z)).down();
-//                    final IBlockState state = world.getBlockState(pos);
-//                    final IBlockState stateDown = world.getBlockState(posDown);
-//
-//                    if ((canSnowAt(pos, world) || canSnowAt(pos, world)) && random.nextInt(24) == 0) {
-//                        final Block block = state.getBlock();
-//                        final Block blockDown = stateDown.getBlock();
-//
-//                        if (block instanceof BlockStairs && !(block instanceof SnowStair)) {
-//                            if (state.getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
-//                                for (SnowStair stair : ModBlocks.SNOW_STAIRS) {
-//                                    if (block == stair.origin) {
-//                                        world.setBlockState(pos, stair.getDefaultState()
-//                                                .withProperty(BlockStairs.HALF, state.getValue(BlockStairs.HALF))
-//                                                .withProperty(BlockStairs.FACING, state.getValue(BlockStairs.FACING))
-//                                                .withProperty(BlockStairs.SHAPE, state.getValue(BlockStairs.SHAPE)));
-//                                        break;
-//                                    }
-//                                }
-//                            }
-//                        } else if (blockDown instanceof BlockStairs && !(blockDown instanceof SnowStair)) {
-//                            if (stateDown.getValue(BlockStairs.HALF).equals(BlockStairs.EnumHalf.BOTTOM)) {
-//                                for (SnowStair stair : ModBlocks.SNOW_STAIRS) {
-//                                    if (blockDown == stair.origin) {
-//                                        world.setBlockState(posDown, stair.getDefaultState()
-//                                                .withProperty(BlockStairs.HALF, stateDown.getValue(BlockStairs.HALF))
-//                                                .withProperty(BlockStairs.FACING, stateDown.getValue(BlockStairs.FACING))
-//                                                .withProperty(BlockStairs.SHAPE, stateDown.getValue(BlockStairs.SHAPE)));
-//                                        break;
-//                                    }
-//                                }
-//                            }
-//                        } else if (block instanceof BlockSlab) {
-//                            for (SnowSlab slab : ModBlocks.SNOW_SLABS) {
-//                                IBlockState originBlockState = slab.origin.getStateFromMeta(slab.originMeta);
-//                                if (state == originBlockState) {
-//                                    if (state.getValue(BlockSlab.HALF) == BlockSlab.EnumBlockHalf.BOTTOM) {
-//                                        world.setBlockState(pos, slab.getDefaultState());
-//                                        break;
-//                                    }
-//                                }
-//                            }
-//                        } else if (blockDown instanceof BlockSlab) {
-//                            for (SnowSlab slab : ModBlocks.SNOW_SLABS) {
-//                                BlockState originBlockState = slab.origin.getStateFromMeta(slab.originMeta);
-//                                if (stateDown == originBlockState) {
-//                                    if (stateDown.getValue(BlockSlab.HALF) == BlockSlab.EnumBlockHalf.BOTTOM) {
-//                                        world.setBlockState(posDown, slab.getDefaultState());
-//                                        break;
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//
-//    }
-//
-//    public static boolean canSnowAt(BlockPos pos, ServerWorld world) {
-//        Biome biome = world.getBiome(pos);
-//        float temp = biome.getTemperature(pos);
-//
-//        if (temp >= 0.15F) {
-//            return false;
-//        }
-//        else return true;
-//    }
-//}
+package trikzon.snowvariants.events;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.StairsBlock;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.properties.Half;
+import net.minecraft.state.properties.SlabType;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.gen.Heightmap;
+import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import trikzon.snowvariants.blocks.ModBlocks;
+import trikzon.snowvariants.blocks.SnowSlab;
+import trikzon.snowvariants.blocks.SnowStair;
+
+import java.util.Random;
+
+@Mod.EventBusSubscriber
+public class SnowEvent {
+
+    private final static int NUM_TICKS = 40;
+    private final static Random random = new Random();
+
+    @SubscribeEvent
+    public static void onChunkTick(ChunkTickEvent event) {
+        if (event.getWorld().isRemote) return;
+        final ServerWorld world = (ServerWorld) event.getWorld();
+        if (world.getGameTime() % NUM_TICKS != 0 || !world.isRaining()) return;
+
+        Chunk chunk = event.getChunk();
+
+        for (int x = 0; x < 16; x++) {
+            for (int z = 0; z < 16; z++) {
+                final BlockPos pos = world.getHeight(Heightmap.Type.MOTION_BLOCKING, chunk.getPos().getBlock(x,0, z)).down();
+                final BlockState state = world.getBlockState(pos);
+
+                Biome biome = world.getBiome(pos);
+                float temp = biome.getTemperature(pos);
+                boolean canSnowAtPos = !(temp >= 0.15);
+
+                if (canSnowAtPos && random.nextInt(24) == 0) {
+                    final Block block = state.getBlock();
+
+                    if (block instanceof StairsBlock && !(block instanceof SnowStair)) {
+                        if (state.get(BlockStateProperties.HALF) == Half.BOTTOM) {
+                            for (SnowStair stair : ModBlocks.SNOW_STAIRS) {
+                                if (block == stair.origin) {
+                                    world.setBlockState(pos, stair.getDefaultState()
+                                            .with(BlockStateProperties.HALF, state.get(BlockStateProperties.HALF))
+                                            .with(BlockStateProperties.HORIZONTAL_FACING, state.get(BlockStateProperties.HORIZONTAL_FACING))
+                                            .with(BlockStateProperties.STAIRS_SHAPE, state.get(BlockStateProperties.STAIRS_SHAPE)));
+                                    break;
+                                }
+                            }
+                        }
+                    } else if (block instanceof SlabBlock) {
+                        for (SnowSlab slab : ModBlocks.SNOW_SLABS) {
+                            if (state == slab.origin.getDefaultState()) {
+                                if (state.get(BlockStateProperties.SLAB_TYPE) == SlabType.BOTTOM) {
+                                    world.setBlockState(pos, slab.getDefaultState());
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
