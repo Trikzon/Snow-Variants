@@ -21,7 +21,7 @@ public class RightClickEvent {
     @SubscribeEvent()
     public static void onBlockRightClicked(PlayerInteractEvent.RightClickBlock event) {
         // Debug Mode:
-        if (true) {
+        if (false) {
             if (!event.getWorld().isRemote) {
                 IBlockState state = event.getWorld().getBlockState(event.getPos());
                 Block block = state.getBlock();
